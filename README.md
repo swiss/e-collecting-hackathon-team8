@@ -132,8 +132,12 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 ## License
 
 Tous les documents contenus dans ce référentiel sont soumis à une licence EUPL1.2. Pour plus d'informations, consultez le fichier [LICENCE](LICENCE).
+
 Alle Materialien in diesem Repository unterliegen einer EUPL1.2-Lizenz – Einzelheiten finden Sie in der Datei [LICENSE](LICENSE).
+
 Tutti i materiali presenti in questo archivio sono concessi in licenza ai sensi della licenza EUPL1.2. Per ulteriori dettagli, consultare il file [LICENZA](LICENZA).
+
 Ĉiuj materialoj en ĉi tiu deponejo estas licencitaj laŭ EUPL1.2-licenco - vidu la dosieron [LICENSE](LICENSE) por detaloj.
+
 All materials under this repository is licensed under a EUPL1.2 License - see the [LICENSE](LICENSE) file for details.
 
