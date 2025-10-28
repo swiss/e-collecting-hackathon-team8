@@ -92,50 +92,92 @@ sequenceDiagram
 *Add or reference wireframes or mockups with user flow showing the user experience of different actors.*
 
 ## Topics addressed
+L'équipe 8 *Confiance pour chaque signature" abordéra les 10 thèmes présentés dans les [directives](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html). La table ci-dessous identifié l'approche:
+- *Gouvernance:* Quelles règles définissent le système
+- *Data:* Comment la définission et l'intégrité des données est-elle assurée.
+- *Tech.:* Quelles inovations technologiques nous allons introduire
+En fonction de l'avancement du hackathon, des liens seront ajouté pour donner plus de détails.
 
 *Explain how you addressed the topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html), filling in the template below.*
 
-| Topic | (How) is it addressed? |
-| -| ------- |
-| 1 |  |
-| 2 |  |
-| 3 |  |
-| ... |  |
+| Topic | (How) is it addressed? |c.f. Cas d'étude|
+| -| ------- |---- |
+| 1 « De la volonté de soutien à la déclaration de soutien »| *Gouvernance:* ...||
+|| *Data:* ...||
+||**Tech. perspective:** Authentication décentralisée||
+| 2 « Accès aux informations concernant les déclarations de soutien déposées » | *Gouvernance:* ...||
+|| *Data:* ...||
+||**Tech. perspective:** ... ||
+| 3 « Attribution des attestations de soutien aux comités et aux entreprises de récolte »| *Gouvernance:* ...||
+|| *Data:* ...||
+||**Tech. perspective:** ...  ||
+| 4 « Diffusion des arguments des comités via le logiciel de récolte électronique de signatures » | *Gouvernance:* ...||
+|| *Data:* ...||
+||**Tech. perspective:** ...  ||
+| 5 « Exclusion des attestations de soutien illicites »  |*Gouvernance:* ...||
+|| *Data:* ...||
+||**Tech. perspective:** ...   ||
+| 6 « Prévention des attestations de soutien non dépouillées »  | *Gouvernance:* ...||
+|| *Data:* ...||
+||**Tech. perspective:** ...  ||
+| 7 « Respect du secret du vote »  |*Gouvernance:* ...||
+|| *Data:* ...||
+||**Tech. perspective:** ...   ||
+| 8 « Intégration avec le processus papier »  |*Gouvernance:* ...||
+|| *Data:* ...||
+||**Tech. perspective:** ...   ||
+| 9 « Introduction facilitée pour les communes avec un gain d'efficacité ; sur la base des
+infrastructures et des processus existants »  | *Gouvernance:* ...||
+|| *Data:* ...||
+||**Tech. perspective:** ...  ||
+| 10 « Récolte électronique pour tous les niveaux fédéraux »  | *Gouvernance:* ...||
+|| *Data:* ...||
+||**Tech. perspective:** ...  ||
 
-## Key Strenghts and Weaknesses
+## Points forts et faiblesses (*Key Strenghts and Weaknesses*)
 
 *List the key strengths and weaknesses of your solution.*
 
-### Strengths:
+### Points forts:
+(*Key strenght*)
 - ...
 - ...
 
-### Weaknesses:
+### Faiblesses:
+(*Weaknesses*)
 - ...
 - ...
 
-## Getting Started
+## Getting Started  (*prochaine mise à jour vendredi*)
 
 *These instructions will get you a copy of the technical prototype (if applicable) up and running on your local machine for development and testing purposes. **If you are not developing a technical prototype, please present or reference your conceptual and/or clickable prototype.***
 
-### Prerequisites
+### Conditions préalables
+*Ce dont vous avez besoin pour commencer.*
+Nous formons une équipe multidisciplinaire. 
+- Citoyen 
+- Cantons et communes
+- Initiateur d'une initiative / d'un référendum
+- Chancellerie fédérale
+- Développeur de solutions
+La condition préalables principale est la volonté de poser des questions afin de construire une solution les prenant en compte.
 
+### Installation (*prochaine mise à jour vendredi*)
+*Une série d'exemples étape par étape qui expliquent comment mettre en place l'environnement de développement.*
+*A step by step series of examples that tell you how to get a development env running.*
 *What things you need to install the software and how to install them.*
 
-### Installation
-
-*A step by step series of examples that tell you how to get a development env running.*
-
-## Contributing
-
-Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of conduct.
+## Contribution & Code de conduite
+Veuillez lire [CONTRIBUTING.md](/CONTRIBUTING.md) pour plus de détails sur notre code de conduite.
 
 ## Team Members
 
-- Philippe Page/GitHub Account (role)
-- Name/GitHub Account (role)
-- Name/GitHub Account (role)
-- ...
+- Philippe Page (*gouvernance digitale*)
+- Robert Mitwicki (*technologies décentralisées*)
+- Damian VIZÁR (*sécurité, cryptographie*)
+- *Contactez Philippe Page <philippe.page@humancolossus.org> si vous voulez rejoindre l'équipe 8*
+- *Wenden Sie sich an Philippe Page <philippe.page@humancolossus.org>, wenn Sie dem Team 8 beitreten möchten.*
+- *Contatta Philippe Page <philippe.page@humancolossus.org> se desideri entrare a far parte del team 8*
 
 ## License
 
