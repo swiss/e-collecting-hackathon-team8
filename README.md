@@ -10,7 +10,7 @@ Nous recherchons des contributeurs avec des compétences en :
 - Modélisation de processus réglementaires
 - Expérience des systèmes communaux et cantonaux
 - citoyens intéressé à la numérisation des services publiques
-- 
+
 <img width="2463" height="1394" alt="image" src="https://github.com/user-attachments/assets/a3ca31d0-87da-42eb-be51-3b5de96826c1" />
 <img width="2470" height="1393" alt="image" src="https://github.com/user-attachments/assets/58adf86a-37e0-41c9-a8c8-c4abd0430212" />
 <img width="2467" height="1394" alt="image" src="https://github.com/user-attachments/assets/9d7ba9f7-3238-4e66-88cb-c6c8349de9f2" />
@@ -37,7 +37,32 @@ Objectifs de ces deux étapes :
 2. Mettre en évidence les bénéfices concrets par rapport aux systèmes papier ou centralisés
 3. Révéler des fonctionnalités exclusives à la version numérique — notamment, une preuve de comptage de signatures accessible au citoyen
 
+##Approach
+### 1. Introduction
+Our approach is based on adapting existing regulatory processes to a decentralized and verifiable architecture. For more details, see our full documentation (to be completed) and any deliverables already produced (if applicable).
 
+We are seeking contributors with skills in:
+- Modeling regulatory processes
+- Experience with municipal and cantonal systems
+- Citizens interested in the digitization of public services
+### 2. Summary Description
+Our solution leverages the open-source architectures DKMS (Decentralised Key Management System) and OCA v2.0 (Overlays Capture Architecture), developed by the Human Colossus Foundation, to digitize and secure civic processes while ensuring transparency and verifiability.
+
+#### Step 1: Use Case — Steeet Signature Collection
+We model and implement the digitization of the signature collection process, integrating:
+- Citizen authentication via decentralized identities
+- Real-time signature verification
+- Immutable data recording
+
+#### Step 2: Analysis of the 10 Hackathon Themes
+We evaluate each theme by identifying:
+1. Benefits provided by our solution (transparency, traceability, inclusion)
+2. Potential risks (accessibility, adoption, regulatory compliance)
+3. Objectives of these two steps:
+
+Demonstrate the feasibility of a civic solution built on open, decentralized protocols
+Highlight tangible benefits compared to paper-based or centralized systems
+Reveal features exclusive to the digital version — notably, citizen-accessible proof of signature count
 ## Documentation and Diagrams
 
 *Together, you will contribute to comparing different ways of how to implement e-collecting in Switzerland from A to Z. As part of the [participatory process](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/partizipativer_prozess.html), your solutions will be discussed in subsequent workshops and will possibly be taken into account for the official decision on the design of the federal e-collecting trials. Proper documentation is key to ensuring that your solution can be understood and evaluated:*
