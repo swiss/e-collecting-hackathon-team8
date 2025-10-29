@@ -28,64 +28,39 @@
 
 *For your reference, you will find below an example of two diagrams showing interactions and data flows between actors, software and infrastructure components of ordering a pizza via a third-party delivery website over time. Please replace them with diagrams for your solution.*
 
-### Flowchart: High-level Process (Example)
+###  Desciption générale des processus selon la réglementation en vigeure
+### 1 Lancement D'initiative populaires et demande de référendum
+*à faire*
 
-*An overall process flow showing the main steps and system/actor interactions for ordering a pizza online via a delivery website, including software, infrastructure, and handoff to the restaurant and delivery driver.*
-
+### 2 Collecte des signature
+#### Flow chart
 ```mermaid
-
 flowchart TD
-    Customer([Customer])
-    DeliverySite("Delivery Website (Web/App)")
-    Backend("Website Backend Server")
-    OrderDB[(Order Database)]
-    Restaurant("Restaurant Order System")
-    Driver("Delivery Driver")
-
-   Customer-->|"1 Place Order (Pizza+Details)"|DeliverySite
-   DeliverySite-->|"2 Send Order Data"|Backend
-   Backend-->|"3 Store Order"|OrderDB
-   Backend-->|"4 Send Order to Restaurant"|Restaurant
-   Restaurant-->|"5 Ack/Confirmation"|Backend
-   Backend-->|"6 Confirmation & ETA"|DeliverySite
-   DeliverySite-->|"7 Show Confirmation"|Customer
-   Restaurant-->|"8 Assign/Notify Delivery"|Driver
-   Driver-->|"9 Pickup & Deliver"|Customer
-   Driver-->|"10 Update Status"|DeliverySite
-   DeliverySite-->|"11 Show Status"|Customer
+    A[Lancement campagne] --> B[Obtention listes CH]
+    B --> C{Distribution}
+    C --> D[En ligne → Électeurs → Retour par poste]
+    C --> E[En espace public → Optionel:Organisations professionnels → Services électoraux]
+    D & E --> F[Cycle répété : rappels + cibles]
+    F --> G[Gestion données sensibles LPD]
+    G --> H[Fin récolte → Prêt pour validation par autorité compétentes]
 
 ```
 
-### Sequence Diagram: Detailed Interactions & Data Flows (Example)
+#### Sequence Diagram: Details des interactions & Flux de données
+Le processus de collecte des signatures pour les initiatives et les référendums est décrit dans le rapport du Conseil fédéral (réf. AAA).
+Il implique les acteurs suivants :
+| 🎯 Acteur                      | 📝 Description                                                                 | 📜 Base légale / Notes                                     | 🛠️ Responsabilités dans la phase de récolte             |
+|-------------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------|
+| **Comité**                    | Comité lançant l’initiative populaire ou la demande de référendum. Gère la campagne, la logistique et le traitement des données. | Art. 60a, 69a LDP (listes) ; LPD Art. 5c (protection des données) | Diffuser les listes, engager des collecteurs, respecter la finalité des données |
+| **Électeurs**                 | Citoyens suisses qui signent les listes. Leurs données sont sensibles selon la LPD. | LPD Art. 5c (données sensibles) ; principe de finalité     | Renvoyer les listes signées (par la poste ou en personne) |
+| **Organisations professionnelles**         | Organismes professionnels engagés pour récolter des signatures ou obtenir des attestations. | En cours de réglementation (soupçons de falsification)      | Récolter en espace public ; obtenir les attestations d’électeur |
+| **Chancellerie fédérale (CH)** | Autorité fédérale qui met à disposition les listes de signatures téléchargeables. | Art. 60a, 69a LDP                                          | Fournir les formulaires — *non impliquée dans la récolte* |
+| **Services électoraux**       | Services cantonaux ou communaux gérant les registres électoraux.               | Droit cantonal (vérification de l’éligibilité)             | Délivrer les attestations d’électeur aux collecteurs     |
+| **Cantons/Communes (CC)**     | Autorités locales régulant l’utilisation de l’espace public pour la récolte.   | Droits fondamentaux (Art. 5, 10, 35 Cst.)                  | Autoriser l’utilisation de l’espace public sous conditions |
 
-*A step-by-step illustration showing how data and requests are exchanged between actors (customer, delivery site, restaurant, infrastructure), and key software components in the order process.*
+**Diagramme de séquences**
+![Signature Collection Diagram](https://github.com/the-human-colossus-foundation/e-collecting-hackathon-team8/blob/main/docs/SD_signatureCollection.png)
 
-```mermaid
-
-sequenceDiagram
-    actor Customer
-    participant WebApp as "Delivery Website (UI)"
-    participant Backend as "Backend Server"
-    participant DB as "Order Database"
-    participant Restaurant as "Restaurant System"
-    actor Driver as "Delivery Driver"
-
-    Customer->>WebApp: Browse menu, select pizza (menu data)
-    Customer->>WebApp: Submit order (pizza, address, payment info)
-    WebApp->>Backend: Create order {pizza, address, payment}
-    Backend->>DB: Save order {orderId, customer, items, payment}
-    Backend->>Restaurant: API: send order {orderId, items, address}
-    Restaurant-->>Backend: Ack/Confirmation {orderId, ETA}
-    Backend-->>WebApp: Show confirmation {orderId, ETA}
-    WebApp-->>Customer: Order confirmation {orderId, ETA}
-    Restaurant->>Driver: Notify driver {pickup, delivery}
-    Driver-->>Restaurant: Pickup ack
-    Driver->>Customer: Deliver pizza
-    Driver->>Backend: Update status {orderId, delivered}
-    Backend->>WebApp: Status update {delivered}
-    WebApp->>Customer: Show status {delivered}
-
-```
 
 ## User Experience
 
@@ -133,6 +108,9 @@ infrastructures et des processus existants »  | *Gouvernance:* ...||
 | 10 « Récolte électronique pour tous les niveaux fédéraux »  | *Gouvernance:* ...||
 || *Data:* ...||
 ||**Tech. perspective:** ...  ||
+
+### 3 Vérification des signature et soumission à la Chancellerie Fédérale
+*à faire*
 
 ## Points forts et faiblesses (*Key Strenghts and Weaknesses*)
 
