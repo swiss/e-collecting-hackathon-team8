@@ -1,0 +1,25 @@
+Test mermaid digram
+
+```mermaid
+
+flowchart TD
+    Customer([Customer])
+    DeliverySite("Delivery Website (Web/App)")
+    Backend("Website Backend Server")
+    OrderDB[(Order Database)]
+    Restaurant("Restaurant Order System")
+    Driver("Delivery Driver")
+
+   Customer-->|"1 Place Order (Pizza+Details)"|DeliverySite
+   DeliverySite-->|"2 Send Order Data"|Backend
+   Backend-->|"3 Store Order"|OrderDB
+   Backend-->|"4 Send Order to Restaurant"|Restaurant
+   Restaurant-->|"5 Ack/Confirmation"|Backend
+   Backend-->|"6 Confirmation & ETA"|DeliverySite
+   DeliverySite-->|"7 Show Confirmation"|Customer
+   Restaurant-->|"8 Assign/Notify Delivery"|Driver
+   Driver-->|"9 Pickup & Deliver"|Customer
+   Driver-->|"10 Update Status"|DeliverySite
+   DeliverySite-->|"11 Show Status"|Customer
+
+```
