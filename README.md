@@ -37,7 +37,7 @@ Objectifs de ces deux étapes :
 2. Mettre en évidence les bénéfices concrets par rapport aux systèmes papier ou centralisés
 3. Révéler des fonctionnalités exclusives à la version numérique — notamment, une preuve de comptage de signatures accessible au citoyen
 
-##Approach
+## Approach
 ### 1. Introduction
 Our approach is based on adapting existing regulatory processes to a decentralized and verifiable architecture. For more details, see our full documentation (to be completed) and any deliverables already produced (if applicable).
 
