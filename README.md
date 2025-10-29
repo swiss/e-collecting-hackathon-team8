@@ -2,17 +2,41 @@
 
 *Over the course of two days, you will develop your solution for collecting electronic signatures for popular initiatives and referendums from A to Z, addressing the 10 topics outlined in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html). Your prototype can be conceptual, clickable, and/or technical. Either way, you should clearly present the interactions and data flows between actors, software, and infrastructure components over time, as well as the user experience of these actors.*
 
-## Approach
+## Approche
+### 1. Introduction
+Notre approche repose sur l’adaptation des processus réglementaires existants à une architecture décentralisée et vérifiable. Pour plus de détails, consultez notre documentation complète (à compléter) et les livrables déjà produits (le cas échéant).
 
+Nous recherchons des contributeurs avec des compétences en :
+- Modélisation de processus réglementaires
+- Expérience des systèmes communaux et cantonaux
+- citoyens intéressé à la numérisation des services publiques
+- 
 <img width="2463" height="1394" alt="image" src="https://github.com/user-attachments/assets/a3ca31d0-87da-42eb-be51-3b5de96826c1" />
 <img width="2470" height="1393" alt="image" src="https://github.com/user-attachments/assets/58adf86a-37e0-41c9-a8c8-c4abd0430212" />
 <img width="2467" height="1394" alt="image" src="https://github.com/user-attachments/assets/9d7ba9f7-3238-4e66-88cb-c6c8349de9f2" />
 <img width="2471" height="1385" alt="image" src="https://github.com/user-attachments/assets/ab424852-d8ef-49e2-99e5-268ec815d056" />
 <img width="2471" height="1392" alt="image" src="https://github.com/user-attachments/assets/d79caaeb-5fba-4827-88df-fcd13bebcdab" />
 
+### 2. Description synthétique
 
+Notre solution s’appuie sur les architectures open source DKMS (Decentralised Key Management System) et OCA v2.0 (Overlays Capture Architecture), développées par la fondation Human Colossus, pour numériser et sécuriser les processus civiques tout en garantissant la transparence et la vérifiabilité.
 
-*A brief description of your approach, a link/reference to the detailed description of your approach and what you have already created (if applicable). Please also mention which skills you need for your team.*
+#### Étape 1 : Cas d’usage — Collecte de signatures en milieu physique
+Nous modélisons et implémentons la numérisation du processus de collecte de signatures, en intégrant :
+- L’authentification des citoyens via des identités décentralisées
+- La vérification en temps réel des signatures
+- L’enregistrement immuable des données
+
+#### Étape 2 : Analyse des 10 thèmes du Hackathon
+Nous évaluons chaque thème en identifiant :
+- Les avantages apportés par notre solution (transparence, traçabilité, inclusion)
+- Les risques potentiels (accessibilité, adoption, conformité réglementaire)
+
+Objectifs de ces deux étapes :
+1. Démontrer la faisabilité d’une solution civique basée sur des protocoles ouverts et décentralisés
+2. Mettre en évidence les bénéfices concrets par rapport aux systèmes papier ou centralisés
+3. Révéler des fonctionnalités exclusives à la version numérique — notamment, une preuve de comptage de signatures accessible au citoyen
+
 
 ## Documentation and Diagrams
 
