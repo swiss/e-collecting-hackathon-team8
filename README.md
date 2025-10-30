@@ -202,6 +202,8 @@ Veuillez lire [CONTRIBUTING.md](/CONTRIBUTING.md) pour plus de détails sur notr
 - Philippe Page (*gouvernance digitale*)
 - Robert Mitwicki (*technologies décentralisées*)
 - Damian VIZÁR (*sécurité, cryptographie*)
+- Michał Pietrus (*Digital Identity & Applied Cryptography*)
+  
 - *Contactez Philippe Page <philippe.page@humancolossus.org> si vous voulez rejoindre l'équipe 8*
 - *Wenden Sie sich an Philippe Page <philippe.page@humancolossus.org>, wenn Sie dem Team 8 beitreten möchten.*
 - *Contatta Philippe Page <philippe.page@humancolossus.org> se desideri entrare a far parte del team 8*
