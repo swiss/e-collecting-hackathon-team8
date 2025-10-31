@@ -23,19 +23,21 @@ Notre solution s’appuie sur les architectures open source DKMS (Decentralised 
 
 #### Étape 1 : Cas d’usage — Collecte de signatures en milieu physique
 Nous modélisons et implémentons la numérisation du processus de collecte de signatures, en intégrant :
-- L’authentification des citoyens via des identités décentralisées
-- La vérification en temps réel des signatures
-- L’enregistrement immuable des données
+- Numérisation de la collect de signature dans la rue
+- La vérification en temps réel des signatures électroniques
+- La complémentarité avec les solutions "papier"
 
-#### Étape 2 : Analyse des 10 thèmes du Hackathon
+#### Étape 2 : "Trust but Verify" Analyse des 10 thèmes du Hackathon
 Nous évaluons chaque thème en identifiant :
 - Les avantages apportés par notre solution (transparence, traçabilité, inclusion)
 - Les risques potentiels (accessibilité, adoption, conformité réglementaire)
+- Une analyse de risque des technologies numériques (e.g. anonymity, linkability)
 
 Objectifs de ces deux étapes :
 1. Démontrer la faisabilité d’une solution civique basée sur des protocoles ouverts et décentralisés
 2. Mettre en évidence les bénéfices concrets par rapport aux systèmes papier ou centralisés
 3. Révéler des fonctionnalités exclusives à la version numérique — notamment, une preuve de comptage de signatures accessible au citoyen
+
 
 ## Approach
 ### 1. Introduction
@@ -50,9 +52,9 @@ Our solution leverages the open-source architectures DKMS (Decentralised Key Man
 
 #### Step 1: Use Case — Steeet Signature Collection
 We model and implement the digitization of the signature collection process, integrating:
-- Citizen authentication via decentralized identities
-- Real-time signature verification
-- Immutable data recording
+- Digitization of signature collection in the street
+- Real-time verification of electronic signatures
+- Complementarity with “paper” solutions
 
 #### Step 2: Analysis of the 10 Hackathon Themes
 We evaluate each theme by identifying:
