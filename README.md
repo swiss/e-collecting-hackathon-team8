@@ -73,23 +73,62 @@ Over the course of 2 days hackathon we worked with all [stakeholders](#sequence-
 
 <img width="2463" height="1394" alt="Proposed architecture diagram for protocol-based approach" src="./docs/E-collecting Hackathon..png" />
 
+
+Below sequence diagram present possible scenario showcase how propsed architecture could improve e-collecting process, few highlights presented on the below diagram:
+- Anonymity and linkability are the two main characteristics to consider when securing and protecting citizen privacy. Linkability is only needed between citizens and the commune, while anonymity should be in place for any other actors, who should not be able to discover citizen identity. This is especially important for the Federal Council when counting votes.
+- It is assumed that the authentication (identification) process between the commune and citizen can be carried out using various ID providers (SwissPass, Swiss e-ID, passport, SwissSign, etc.). After this, the commune can issue a `one-time certificate` that can be used to digitally sign that specific initiative. This ensures that the citizen will not be linked in the subsequent stages of the process, while maintaining the audibility and cryptographic provability of the entire process.
+- Introduce an additional notification mechanism to inform citizens about eligibility checks and signatures included in initiatives. This increases transparency and allows citizens to regain trust in the digital system. If someone tries to 'steal' their signature, they will at least be informed.
+- Thanks to `DKMS`, we can establish distributed (digital) governance around the ecosystem and designate different parties which can be verified (as well as all the objects e.g. survey with content) during the process, for example:
+  - Inclusive organisations, who can enrich existing initiatives with additional layers, e.g. local translation, improved text for people with ADHD, improved reading materials for blind people, and so on.
+  - Collectors, so citizens can verify whether a collector is authorised to collect votes.
+  - ID providers
+  - Verify that the content which citizens are signing is actually registered for the initiative.
+- The protocol-based approach enables each actor to define their own rules, facilitating integration with existing IT systems and reducing the costs and complexity of e-collection. This is particularly important in the context of various registries used to verify citizens and different parties within the ecosystem.
 ```mermaid
 sequenceDiagram
   actor A as Citizien
   actor K as Collector
   participant IdProvider@{"type":"entity"}
-  participant Commitee
   participant Commune@{ "type" : "control" }
+  participant Commitee
   participant FC as Federal Council
   participant InclusionOrg
 
+  A->>IdProvider: Enroll digital ID
+  IdProvider->>A: Provide Verifiable Credential (e.g. ID Card)
   FC->FC: Issue official template
   Note right of FC: OCA - assuring integrity of meaining and structure
   Commitee->Commitee: Register initative
   Commitee->FC: Request signature lists
-  FC->InclusionOrg: Retrive official template 
+  FC->>Commitee: Provide Initiative survey in OCA format
+  FC->InclusionOrg: Retrive official survey 
+  InclusionOrg->InclusionOrg: Enhance with inclusivens layers (e.g. for blind people, Dyslexia, Local translations)
+
+  alt Digital
+  Commitee->>A:Learn about Initiative
+  opt Retrive inclusivens enhancment
+    InclusionOrg->>A: Provide accessibility layer for initiative
+  end
+  A->>Commune: Authenticate for eligibility check
+  Commune->>A: Provide certificate for signing
+  A->>A: Sign
+  A->>Commitee: Provide anonymouse digital prove to support initiative
+  end
   
-  FC->Commitee: Provide Initiative survey in OCA format
+  alt Paper
+  Commitee->>K: Order signature collection
+  K->+A:Approach for signature collection
+  A->-K:Sign (digital or paper)
+  K->>Commune: Ask for eligibility check
+  Commune->>A: Inform that Colletor ask for such check
+  Commune->>K: Provide digital proof of the validated signatures
+  K->>Commitee: Provide anonymouse digital prove to support initiative 
+  end
+
+  Commitee->>FC: Provide supporting signatures
+  FC->>FC: Counts and announce results
+  A->>FC: Verify cryptographically that my signature was included
+
     
 ```
 
