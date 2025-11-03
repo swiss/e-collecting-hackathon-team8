@@ -1,17 +1,33 @@
-# 8) Instaurer la confiance à chaque signature ! Collecte électronique fédérée et vérifiée cryptographiquement
+# Team 8. Instaurer la confiance à chaque signature ! Collecte électronique fédérée et vérifiée cryptographiquement
 
-*[Hackathon Guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html)
+## Team 8 Contributeurs
+| Membre  | Representant  | Organisation |
+|---------|---------------|-------------|
+| Philippe Page | *gouvernance distribuée* | [Human Colossus Foundation](https://humancolossus.foundation)|
+| Robert Mitwicki | *technologies décentralisées* | [Human Colossus Foundation](https://humancolossus.foundation)|
+| Jérôme Campese | *agence de récolte de signature* | [VOX Communication SA](https://www.vox-communication.ch/presentation) |
+| Alessua Pacino | *canton de Thurgovie* | |
+| Damian VIZÁR | *sécurité, cryptographie* | CSEM |
+| Michał Pietrus | *identité numérique & cryptographie appliquée* | ArgonAuths |
+  
+### Références utilisées
+1. [Hackathon Guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html) Chancellerie Fédérale
+2. Overlays Capture Architecture [OCA](https://oca.colossi.network/) specification
+3. Distributed Key Managment System [DKMS](https://dkms.colossi.network/) specification
 
 ## Approche
 
 ### 1. Introduction
-Notre approche repose sur l’adaptation des processus réglementaires existants à une architecture décentralisée et vérifiable. Pour plus de détails, consultez notre documentation complète (à compléter) et les livrables déjà produits (le cas échéant).
+Notre approche repose sur l’adaptation des processus réglementaires existants à une architecture décentralisée et vérifiable. 
 
-Nous recherchons des contributeurs avec des compétences en :
+Durant la durée du hackathon, nous avons intéragi avec les experts présnents avec les compétences suivantes :
 - Modélisation de processus réglementaires
 - Expérience des systèmes communaux et cantonaux
 - citoyens intéressé à la numérisation des services publiques
+- agent de récolte de signature
 
+#### Présentation de l'approche en 4 minutes 
+*(vendredi 31 octobre)*
 <img width="2463" height="1394" alt="image" src="https://github.com/user-attachments/assets/a3ca31d0-87da-42eb-be51-3b5de96826c1" />
 <img width="2470" height="1393" alt="image" src="https://github.com/user-attachments/assets/58adf86a-37e0-41c9-a8c8-c4abd0430212" />
 <img width="2467" height="1394" alt="image" src="https://github.com/user-attachments/assets/9d7ba9f7-3238-4e66-88cb-c6c8349de9f2" />
@@ -20,55 +36,23 @@ Nous recherchons des contributeurs avec des compétences en :
 
 ### 2. Description synthétique
 
-Notre solution s’appuie sur les architectures open source DKMS (Decentralised Key Management System) et OCA v2.0 (Overlays Capture Architecture), développées par la fondation Human Colossus, pour numériser et sécuriser les processus civiques tout en garantissant la transparence et la vérifiabilité.
+Notre solution vise à mettre en place une architecture décentralisée permettant à chaque acteur du processus de E-Collecting d'intéragir sans la nécessité d'une plateforme unique. Cette approche vise une intégration des systèmes des acteurs légitimes plutôt que la creation de platform ou registres centralisé qui créent des dépendences envers différents acteurs technologiques, un risque de hacking (honey pot), et des coûts de déploiment.
 
-#### Étape 1 : Cas d’usage — Collecte de signatures en milieu physique
-Nous modélisons et implémentons la numérisation du processus de collecte de signatures, en intégrant :
-- Numérisation de la collect de signature dans la rue
-- La vérification en temps réel des signatures électroniques
-- La complémentarité avec les solutions "papier"
+Cette architecture s'appuie sur les architectures open source [DKMS](https://dkms.colossi.network/) (Decentralised Key Management System) et [OCA](https://oca.colossi.network/) v2.0 (Overlays Capture Architecture), développées par la [Human Colossus Foundation](https://humancolossus.foundation/). Ces deux architectures sont particulièrement bien adaptées pour numériser et sécuriser les processus civiques tout en garantissant l'interopérabilité, la transparence et la vérifiabilité.
 
-#### Étape 2 : "Trust but Verify" Analyse des 10 thèmes du Hackathon
-Nous évaluons chaque thème en identifiant :
-- Les avantages apportés par notre solution (transparence, traçabilité, inclusion)
-- Les risques potentiels (accessibilité, adoption, conformité réglementaire)
-- Une analyse de risque des technologies numériques (e.g. anonymity, linkability)
+Nous proposons une approache par *petits pas significatifs* afin de s'assurer que l'évolution des normes (e.g. nombre de signatures à récolter) puisse s'adapter aux progrès technologiques.
 
-Objectifs de ces deux étapes :
-1. Démontrer la faisabilité d’une solution civique basée sur des protocoles ouverts et décentralisés
-2. Mettre en évidence les bénéfices concrets par rapport aux systèmes papier ou centralisés
-3. Révéler des fonctionnalités exclusives à la version numérique — notamment, une preuve de comptage de signatures accessible au citoyen
+| Phase  | But  | Description |
+|---------|---------------|---- |
+|1  |Numérisation essentielle| Le status quo n'est pas une option. Cette première phase, à mettre en place rapidement, se concentre donc sur les point clefs et introduit **une signature numérique pour le citoyen** et **améliore l'efficacité des contrôles**  tout en préservant le role des communes, cantons, comité d'initiatives et Chancellerie Fédérale.|
+|2  |Feedback loop| Mesure de l'adoption des nouveautés et mesure de l'impact sociétal. *Ce sujet, bien que discuté durant le hackathon, n'est pas abordé ici*|
+|3  |DDPI| Intégration du E-Collecting dans le concept plus large the Democratic Digital Public Infrastructure (DDPI). *Hors sujet pour le hackathon* |
 
+Selon l'approche ci-dessus, seule la phase 1, **Numérisation essentielle** est inclue dans le champ de notre solution pour le hackathon.
 
-## Approach
-### 1. Introduction
-Our approach is based on adapting existing regulatory processes to a decentralized and verifiable architecture. For more details, see our full documentation (to be completed) and any deliverables already produced (if applicable).
-
-We are seeking contributors with skills in:
-- Modeling regulatory processes
-- Experience with municipal and cantonal systems
-- Citizens interested in the digitization of public services
-  
-### 2. Summary Description
-Our solution leverages the open-source architectures [DKMS](https://dkms.colossi.network/) (Decentralised Key Management System) and [OCA](https://oca.colossi.network/) v2.0 (Overlays Capture Architecture), developed by the [Human Colossus Foundation](https://humancolossus.foundation/), to digitize and secure civic processes while ensuring interoperability, transparency and verifiability.
-
-#### Step 1: Use Case — Steeet Signature Collection
-We model and implement the digitization of the signature collection process, integrating:
-- Digitization of signature collection in the street
-- Real-time verification of electronic signatures by all actors
-- Complementarity with “paper” solutions
-
-#### Step 2: Analysis of the 10 Hackathon Themes
-We evaluate each theme by identifying:
-1. Benefits provided by our solution (transparency, traceability, inclusion)
-2. Potential risks (accessibility, adoption, regulatory compliance)
-3. Objectives of these two steps:
-
-Demonstrate the feasibility of a civic solution built on open, decentralized protocols
-Highlight tangible benefits compared to paper-based or centralized systems
-Reveal features exclusive to the digital version — notably, citizen-accessible proof of signature count
-
-## Documentation and Diagrams
+### Originalité de la solution: Authenticité et Intégrité *by-design*
+We introduce a protocole based approach where open-source protocoles are intégrated in the different components of an E-Collecting system.
+#### Documentation and Diagrams
 Over the course of 2 days hackathon we worked with all [stakeholders](#sequence-diagram-details-des-interactions--flux-de-données) to reflect their requirments, governance and limitations.
 
 <img width="2463" height="1394" alt="Proposed architecture diagram for protocol-based approach" src="./docs/E-collecting Hackathon..png" />
@@ -131,6 +115,54 @@ sequenceDiagram
 
     
 ```
+### Originalité de la solution: Gouvernance Distribuée *by-design*
+#### Étape 1 : Cas d’usage — Collecte de signatures en milieu physique
+Nous modélisons et implémentons la numérisation du processus de collecte de signatures, en intégrant :
+- Numérisation de la collecte de signature dans la rue
+- La vérification en temps réel des signatures électroniques
+- La complémentarité avec les solutions "papier"
+
+#### Étape 2 : "Trust but Verify" Analyse des 10 thèmes du Hackathon
+Nous évaluons chaque thème en identifiant :
+- Les avantages apportés par notre solution (transparence, traçabilité, inclusion)
+- Les risques potentiels (accessibilité, adoption, conformité réglementaire)
+- Une analyse de risque des technologies numériques (e.g. anonymity, linkability)
+
+Objectifs de ces deux étapes :
+1. Démontrer la faisabilité d’une solution civique basée sur des protocoles ouverts et décentralisés
+2. Mettre en évidence les bénéfices concrets par rapport aux systèmes papier ou centralisés
+3. Révéler des fonctionnalités exclusives à la version numérique — notamment, une preuve de comptage de signatures accessible au citoyen
+
+
+## Approach
+### 1. Introduction
+Our approach is based on adapting existing regulatory processes to a decentralized and verifiable architecture. For more details, see our full documentation (to be completed) and any deliverables already produced (if applicable).
+
+We are seeking contributors with skills in:
+- Modeling regulatory processes
+- Experience with municipal and cantonal systems
+- Citizens interested in the digitization of public services
+  
+### 2. Summary Description
+Our solution leverages the open-source architectures [DKMS](https://dkms.colossi.network/) (Decentralised Key Management System) and [OCA](https://oca.colossi.network/) v2.0 (Overlays Capture Architecture), developed by the [Human Colossus Foundation](https://humancolossus.foundation/), to digitize and secure civic processes while ensuring interoperability, transparency and verifiability.
+
+#### Step 1: Use Case — Steeet Signature Collection
+We model and implement the digitization of the signature collection process, integrating:
+- Digitization of signature collection in the street
+- Real-time verification of electronic signatures by all actors
+- Complementarity with “paper” solutions
+
+#### Step 2: Analysis of the 10 Hackathon Themes
+We evaluate each theme by identifying:
+1. Benefits provided by our solution (transparency, traceability, inclusion)
+2. Potential risks (accessibility, adoption, regulatory compliance)
+3. Objectives of these two steps:
+
+Demonstrate the feasibility of a civic solution built on open, decentralized protocols
+Highlight tangible benefits compared to paper-based or centralized systems
+Reveal features exclusive to the digital version — notably, citizen-accessible proof of signature count
+
+
 
 ###  Desciption générale des processus selon la réglementation en vigeure
 ### 1 Lancement D'initiative populaires et demande de référendum
@@ -259,16 +291,6 @@ La condition préalables principale est la volonté de poser des questions afin 
 ## Contribution & Code de conduite
 Veuillez lire [CONTRIBUTING.md](/CONTRIBUTING.md) pour plus de détails sur notre code de conduite.
 
-## Team Members
-
-- Philippe Page (*gouvernance digitale*)
-- Robert Mitwicki (*technologies décentralisées*)
-- Damian VIZÁR (*sécurité, cryptographie*)
-- Michał Pietrus (*Digital Identity & Applied Cryptography*)
-  
-- *Contactez Philippe Page <philippe.page@humancolossus.org> si vous voulez rejoindre l'équipe 8*
-- *Wenden Sie sich an Philippe Page <philippe.page@humancolossus.org>, wenn Sie dem Team 8 beitreten möchten.*
-- *Contatta Philippe Page <philippe.page@humancolossus.org> se desideri entrare a far parte del team 8*
 
 ## License
 
