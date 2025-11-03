@@ -230,9 +230,21 @@ infrastructures et des processus existants »  | *Gouvernance:* ...||
 - ...
 - ...
 
-## Getting Started  (*prochaine mise à jour vendredi*)
+## Pilot
 
-*These instructions will get you a copy of the technical prototype (if applicable) up and running on your local machine for development and testing purposes. **If you are not developing a technical prototype, please present or reference your conceptual and/or clickable prototype.***
+We suggest conducting a pilot with a consortium of stakeholders to demonstrate the benefits of the technology and identify any potential challenges that may arise during testing in the real world. The consortium should consist of:
+- organisations that collect signatures on the streets
+- an inclusivity organisation;
+- at least two or more ID providers. 
+- two or more communes.
+- at least two cantons
+- Cryptography experts
+- IT providers of solutions for IT systems in communes/cantons (integration feasibility). 
+- Federal Council
+
+As initiatives are a very sensitive topic, we would suggest running a pilot in scope of collecting signatues for petition, which would give us the chance to prepare for a large-scale pilot of national initiatives. 
+
+## Getting Started  
 
 ### Conditions préalables
 *Ce dont vous avez besoin pour commencer.*
@@ -243,11 +255,6 @@ Nous formons une équipe multidisciplinaire.
 - Chancellerie fédérale
 - Développeur de solutions
 La condition préalables principale est la volonté de poser des questions afin de construire une solution les prenant en compte.
-
-### Installation (*prochaine mise à jour vendredi*)
-*Une série d'exemples étape par étape qui expliquent comment mettre en place l'environnement de développement.*
-*A step by step series of examples that tell you how to get a development env running.*
-*What things you need to install the software and how to install them.*
 
 ## Contribution & Code de conduite
 Veuillez lire [CONTRIBUTING.md](/CONTRIBUTING.md) pour plus de détails sur notre code de conduite.
