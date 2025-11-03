@@ -276,22 +276,6 @@ We suggest conducting a pilot with a consortium of stakeholders to demonstrate t
 
 As initiatives are a very sensitive topic, we would suggest running a pilot in scope of collecting signatues for petition, which would give us the chance to prepare for a large-scale pilot of national initiatives. 
 
-## Getting Started  
-
-### Conditions préalables
-*Ce dont vous avez besoin pour commencer.*
-Nous formons une équipe multidisciplinaire. 
-- Citoyen 
-- Cantons et communes
-- Initiateur d'une initiative / d'un référendum
-- Chancellerie fédérale
-- Développeur de solutions
-La condition préalables principale est la volonté de poser des questions afin de construire une solution les prenant en compte.
-
-## Contribution & Code de conduite
-Veuillez lire [CONTRIBUTING.md](/CONTRIBUTING.md) pour plus de détails sur notre code de conduite.
-
-
 ## License
 
 Tous les documents contenus dans ce référentiel sont soumis à une licence EUPL1.2. Pour plus d'informations, consultez le fichier [LICENCE](LICENCE).
