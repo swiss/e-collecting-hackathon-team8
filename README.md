@@ -48,7 +48,7 @@ We are seeking contributors with skills in:
 - Experience with municipal and cantonal systems
 - Citizens interested in the digitization of public services
 ### 2. Summary Description
-Our solution leverages the open-source architectures DKMS (Decentralised Key Management System) and OCA v2.0 (Overlays Capture Architecture), developed by the Human Colossus Foundation, to digitize and secure civic processes while ensuring transparency and verifiability.
+Our solution leverages the open-source architectures DKMS (Decentralised Key Management System) and OCA v2.0 (Overlays Capture Architecture), developed by the Human Colossus Foundation, to digitize and secure civic processes while ensuring interoperability, transparency and verifiability.
 
 #### Step 1: Use Case — Steeet Signature Collection
 We model and implement the digitization of the signature collection process, integrating:
@@ -66,18 +66,8 @@ Demonstrate the feasibility of a civic solution built on open, decentralized pro
 Highlight tangible benefits compared to paper-based or centralized systems
 Reveal features exclusive to the digital version — notably, citizen-accessible proof of signature count
 ## Documentation and Diagrams
+<img width="2463" height="1394" alt="Proposed architecture diagram for protocol-based approach" src="./docs/E-collecting Hackathon..png" />
 
-*Together, you will contribute to comparing different ways of how to implement e-collecting in Switzerland from A to Z. As part of the [participatory process](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/partizipativer_prozess.html), your solutions will be discussed in subsequent workshops and will possibly be taken into account for the official decision on the design of the federal e-collecting trials. Proper documentation is key to ensuring that your solution can be understood and evaluated:*
-
-1. **[Mermaid](https://mermaid.js.org/) diagram(s) showing interactions and data flows between actors, software and infrastructure components of your solution over time.**
-2. **Wireframes or mockups with user flow showing the user experience of different actors** (using e.g. Figma)
-3. Explain how you addressed the topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html), filling in the template below.
-4. List the key strengths and weaknesses of your solution.
-5. Explanation of features used (if applicable)
-6. A requirements file with all packages and versions used (if applicable)
-7. Environment code to be run (if applicable)
-
-*For your reference, you will find below an example of two diagrams showing interactions and data flows between actors, software and infrastructure components of ordering a pizza via a third-party delivery website over time. Please replace them with diagrams for your solution.*
 
 ###  Desciption générale des processus selon la réglementation en vigeure
 ### 1 Lancement D'initiative populaires et demande de référendum
