@@ -1,8 +1,9 @@
 # 8) Instaurer la confiance à chaque signature ! Collecte électronique fédérée et vérifiée cryptographiquement
 
-*Over the course of two days, you will develop your solution for collecting electronic signatures for popular initiatives and referendums from A to Z, addressing the 10 topics outlined in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html). Your prototype can be conceptual, clickable, and/or technical. Either way, you should clearly present the interactions and data flows between actors, software, and infrastructure components over time, as well as the user experience of these actors.*
+*[Hackathon Guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html)
 
 ## Approche
+
 ### 1. Introduction
 Notre approche repose sur l’adaptation des processus réglementaires existants à une architecture décentralisée et vérifiable. Pour plus de détails, consultez notre documentation complète (à compléter) et les livrables déjà produits (le cas échéant).
 
@@ -47,13 +48,14 @@ We are seeking contributors with skills in:
 - Modeling regulatory processes
 - Experience with municipal and cantonal systems
 - Citizens interested in the digitization of public services
+  
 ### 2. Summary Description
-Our solution leverages the open-source architectures DKMS (Decentralised Key Management System) and OCA v2.0 (Overlays Capture Architecture), developed by the Human Colossus Foundation, to digitize and secure civic processes while ensuring interoperability, transparency and verifiability.
+Our solution leverages the open-source architectures [DKMS](https://dkms.colossi.network/) (Decentralised Key Management System) and [OCA](https://oca.colossi.network/) v2.0 (Overlays Capture Architecture), developed by the [Human Colossus Foundation](https://humancolossus.foundation/), to digitize and secure civic processes while ensuring interoperability, transparency and verifiability.
 
 #### Step 1: Use Case — Steeet Signature Collection
 We model and implement the digitization of the signature collection process, integrating:
 - Digitization of signature collection in the street
-- Real-time verification of electronic signatures
+- Real-time verification of electronic signatures by all actors
 - Complementarity with “paper” solutions
 
 #### Step 2: Analysis of the 10 Hackathon Themes
@@ -65,9 +67,31 @@ We evaluate each theme by identifying:
 Demonstrate the feasibility of a civic solution built on open, decentralized protocols
 Highlight tangible benefits compared to paper-based or centralized systems
 Reveal features exclusive to the digital version — notably, citizen-accessible proof of signature count
+
 ## Documentation and Diagrams
+Over the course of 2 days hackathon we worked with all [stakeholders](#sequence-diagram-details-des-interactions--flux-de-données) to reflect their requirments, governance and limitations.
+
 <img width="2463" height="1394" alt="Proposed architecture diagram for protocol-based approach" src="./docs/E-collecting Hackathon..png" />
 
+```mermaid
+sequenceDiagram
+  actor A as Citizien
+  actor K as Collector
+  participant IdProvider@{"type":"entity"}
+  participant Commitee
+  participant Commune@{ "type" : "control" }
+  participant FC as Federal Council
+  participant InclusionOrg
+
+  FC->FC: Issue official template
+  Note right of FC: OCA - assuring integrity of meaining and structure
+  Commitee->Commitee: Register initative
+  Commitee->FC: Request signature lists
+  FC->InclusionOrg: Retrive official template 
+  
+  FC->Commitee: Provide Initiative survey in OCA format
+    
+```
 
 ###  Desciption générale des processus selon la réglementation en vigeure
 ### 1 Lancement D'initiative populaires et demande de référendum
