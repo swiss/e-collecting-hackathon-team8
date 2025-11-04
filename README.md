@@ -36,7 +36,6 @@ Durant la durée du hackathon, nous avons intéragi avec les experts présnents 
 <img width="2471" height="1392" alt="image" src="https://github.com/user-attachments/assets/d79caaeb-5fba-4827-88df-fcd13bebcdab" />
 
 ### 2. Description synthétique: Approche Fédérative et indépendent de plateforme unique
-
 #### Périmètre du Hackathon: Phase 1
 Nous proposons une approache par *petits pas significatifs* afin de s'assurer que l'évolution des normes (e.g. nombre de signatures à récolter) puisse s'adapter aux progrès technologiques.
 
@@ -85,6 +84,14 @@ Over the course of 2 days hackathon we worked with all [stakeholders](#sequence-
 - The protocol-based approach enables each actor to define their own rules, facilitating integration with existing IT systems and reducing the costs and complexity of e-collection. This is particularly important in the context of various registries used to verify citizens and different parties within the ecosystem.
 
 #### E-Signature in the street use case
+We model and implement the digitization of the signature collection process, integrating:
+- Digitization of signature collection in the street
+- Real-time verification of electronic signatures by all actors
+- Complementarity with “paper” solutions
+Demonstrate the feasibility of a civic solution built on open, decentralized protocols
+Highlight tangible benefits compared to paper-based or centralized systems
+Reveal features exclusive to the digital version — notably, citizen-accessible proof of signature count
+
 #### Collection process & artifacts.
 The use case is describe in terms that will allow an in depth security analysis. These Hackaton notes sketches a notion of a scheme for electronic collection of signatures in supporting a referendum or an initiative.
 
@@ -175,63 +182,12 @@ sequenceDiagram
 
     
 ```
-A preliminary draft of a security analysis is provided here for illustration purposes.
+A preliminary draft of a security analysis is provided [here for illustration purposes](https://github.com/the-human-colossus-foundation/e-collecting-hackathon-team8/blob/main/SecurityAnalysis_v01.pdf).
 
-### Originalité de la solution: Gouvernance Distribuée *by-design*
-#### Étape 1 : Cas d’usage — Collecte de signatures en milieu physique
-Nous modélisons et implémentons la numérisation du processus de collecte de signatures, en intégrant :
-- Numérisation de la collecte de signature dans la rue
-- La vérification en temps réel des signatures électroniques
-- La complémentarité avec les solutions "papier"
+#### B. Gouvernance Distribuée *by-design*
+For the Governance Layer, we apply a digital distributed governance model that avoids the need of creating a centralised platform outside the control of a legitimate authority (e.g no data stored unless already provision in the law). 
 
-#### Étape 2 : "Trust but Verify" Analyse des 10 thèmes du Hackathon
-Nous évaluons chaque thème en identifiant :
-- Les avantages apportés par notre solution (transparence, traçabilité, inclusion)
-- Les risques potentiels (accessibilité, adoption, conformité réglementaire)
-- Une analyse de risque des technologies numériques (e.g. anonymity, linkability)
-
-Objectifs de ces deux étapes :
-1. Démontrer la faisabilité d’une solution civique basée sur des protocoles ouverts et décentralisés
-2. Mettre en évidence les bénéfices concrets par rapport aux systèmes papier ou centralisés
-3. Révéler des fonctionnalités exclusives à la version numérique — notamment, une preuve de comptage de signatures accessible au citoyen
-
-
-## Approach
-### 1. Introduction
-Our approach is based on adapting existing regulatory processes to a decentralized and verifiable architecture. For more details, see our full documentation (to be completed) and any deliverables already produced (if applicable).
-
-We are seeking contributors with skills in:
-- Modeling regulatory processes
-- Experience with municipal and cantonal systems
-- Citizens interested in the digitization of public services
-  
-### 2. Summary Description
-Our solution leverages the open-source architectures [DKMS](https://dkms.colossi.network/) (Decentralised Key Management System) and [OCA](https://oca.colossi.network/) v2.0 (Overlays Capture Architecture), developed by the [Human Colossus Foundation](https://humancolossus.foundation/), to digitize and secure civic processes while ensuring interoperability, transparency and verifiability.
-
-#### Step 1: Use Case — Steeet Signature Collection
-We model and implement the digitization of the signature collection process, integrating:
-- Digitization of signature collection in the street
-- Real-time verification of electronic signatures by all actors
-- Complementarity with “paper” solutions
-
-#### Step 2: Analysis of the 10 Hackathon Themes
-We evaluate each theme by identifying:
-1. Benefits provided by our solution (transparency, traceability, inclusion)
-2. Potential risks (accessibility, adoption, regulatory compliance)
-3. Objectives of these two steps:
-
-Demonstrate the feasibility of a civic solution built on open, decentralized protocols
-Highlight tangible benefits compared to paper-based or centralized systems
-Reveal features exclusive to the digital version — notably, citizen-accessible proof of signature count
-
-
-
-###  Desciption générale des processus selon la réglementation en vigeure
-### 1 Lancement D'initiative populaires et demande de référendum
-*à faire*
-
-### 2 Collecte des signature
-#### Flow chart
+A very simplified flow chart is
 ```mermaid
 flowchart TD
     A[Lancement campagne] --> B[Obtention listes CH]
@@ -260,18 +216,16 @@ Il implique les acteurs suivants :
 ![Signature Collection Diagram](https://github.com/the-human-colossus-foundation/e-collecting-hackathon-team8/blob/main/docs/SD_signatureCollection.png)
 
 
-## User Experience
+## UX/UI expérience utilisateur
+Bien que notre approche ne traite pas directement de l'expérience utilisateur, elle a un impact significatif sur la conception de l'expérience utilisateur. En effet, l'approche basée sur un protocole permet de développer des applications ou des intégrations adaptées aux besoins spécifiques de chaque partie prenante sans compromettre l'interopérabilité. 
 
-Although our approach does not directly address UX, it has a significant impact on UX design. This is because the protocol-based approach enables the development of applications or integrations tailored to the specific needs of each stakeholder without compromising interoperability. For instance, an independent organisation could develop a referendum app tailored to blind people, enabling them to participate in the initiative more easily. Similarly, people unable to sign could use a dedicated application with facial recognition for identification purposes, reducing barriers to participation. The SMPT protocol has also enabled various solutions for email clients and servers on the internet, and DKMS does the same here. This allows the creation of a rich, stable ecosystem that is resilient and can address the needs of all parties (with no vendor locking).
+Par exemple, une organisation indépendante pourrait développer une application de référendum adaptée aux personnes aveugles, leur permettant de participer plus facilement à l'initiative. De même, les personnes incapables de signer pourraient utiliser une application dédiée avec reconnaissance faciale à des fins d'identification, réduisant ainsi les obstacles à la participation. Le protocole SMPT a également permis la mise en place de diverses solutions pour les clients et serveurs de messagerie électronique sur Internet, et DKMS fait de même ici. Cela permet la création d'un écosystème riche et stable, résilient et capable de répondre aux besoins de toutes les parties (sans verrouillage des fournisseurs).
 
-## Topics addressed
+## Sujets traités
 L'équipe 8 *Confiance pour chaque signature" abordéra les 10 thèmes présentés dans les [directives](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html). La table ci-dessous identifié l'approche:
 - *Gouvernance:* Quelles règles définissent le système
 - *Data:* Comment la définission et l'intégrité des données est-elle assurée.
 - *Tech.:* Quelles inovations technologiques nous allons introduire
-En fonction de l'avancement du hackathon, des liens seront ajouté pour donner plus de détails.
-
-*Explain how you addressed the topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html), filling in the template below.*
 
 | Topic | (How) is it addressed? |c.f. Cas d'étude|
 | -| ------- |---- |
@@ -307,16 +261,11 @@ infrastructures et des processus existants »  | *Gouvernance:* ...||
 || *Data:* ...||
 ||**Tech. perspective:** ...  ||
 
-### 3 Vérification des signature et soumission à la Chancellerie Fédérale
-*à faire*
-
 ## Points forts et faiblesses (*Key Strenghts and Weaknesses*)
-
-*List the key strengths and weaknesses of your solution.*
 
 ### Points forts:
 (*Key strenght*)
-- ...
+- 
 - ...
 
 ### Faiblesses:
