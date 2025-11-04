@@ -220,55 +220,144 @@ It involves the following actors:
 Although our approach does not directly address UX, it has a significant impact on UX design. This is because the protocol-based approach enables the development of applications or integrations tailored to the specific needs of each stakeholder without compromising interoperability. For instance, an independent organisation could develop a referendum app tailored to blind people, enabling them to participate in the initiative more easily. Similarly, people unable to sign could use a dedicated application with facial recognition for identification purposes, reducing barriers to participation. The SMPT protocol has also enabled various solutions for email clients and servers on the internet, and DKMS does the same here. This allows the creation of a rich, stable ecosystem that is resilient and can address the needs of all parties (with no vendor locking).
 
 ## Topics covered
-Team 8, ‘Trust for every signature’, addressed the 10 topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html). The table below outlines the approach:
-- *Governance:* What rules define the system?
-- *Data:* How is data definition and integrity ensured?
-- *Tech.:* What technological innovations will we introduce?
+Team 8, ‘Trust for every signature’, addressed the 10 topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html). 
 
-| Topic | (How) is it addressed? |c.f. Cas d'étude|
-| -| ------- |---- |
-| 1 « De la volonté de soutien à la déclaration de soutien »| *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** Authentication décentralisée||
-| 2 « Accès aux informations concernant les déclarations de soutien déposées » | *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ... ||
-| 3 « Attribution des attestations de soutien aux comités et aux entreprises de récolte »| *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...  ||
-| 4 « Diffusion des arguments des comités via le logiciel de récolte électronique de signatures » | *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...  ||
-| 5 « Exclusion des attestations de soutien illicites »  |*Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...   ||
-| 6 « Prévention des attestations de soutien non dépouillées »  | *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...  ||
-| 7 « Respect du secret du vote »  |*Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...   ||
-| 8 « Intégration avec le processus papier »  |*Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...   ||
-| 9 « Introduction facilitée pour les communes avec un gain d'efficacité ; sur la base des
-infrastructures et des processus existants »  | *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...  ||
-| 10 « Récolte électronique pour tous les niveaux fédéraux »  | *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...  ||
+## **Topic 1 — From Willingness to Support → Submission (UX & Trust)**
 
+### Advanced Authentication for Identification: *Who is Who*
+
+* **Multiple identity systems:** Expect many identity systems at different levels (e.g., national ID, canton ID, citizien ID etc.), requiring a **compatibility layer** between them.
+* **PKI limits for long-term verification:** Today’s PKI relies on **short-lived, rotating keys**. Root compromises force **mass revocations**, making cross-time and cross-jurisdiction verification fragile.
+* **DKMS shift — trust IDs, not keys:** Move trust from the **key** to a **stable identifier**, so keys and crypto suites (e.g., post-quantum) can evolve without breaking integrity. Design for **parallel identity systems** (national, canton, etc.).
+* **Protocol-first, privacy-capable interoperability:** Use **open protocols** (not a central authority) to include diverse ID systems, choosing cryptography that supports **privacy-preserving features** like *selective disclosure* and *zero-knowledge proofs*.
+  
+### Distributed Governance
+
+* Maintaining digital sovereignty would be a major challenge. This is why an approach based on decentralised protocols would help with the design and deployment of systems, allowing us to maintain the same digital sovereignty as in the real world without worrying that the technology would limit or restrict it. Technologies have a tendency to centralise and simplify things, which can harm the possibility of adapting them to local rules. We therefore suggest a local-first approach. 
+
+---
+
+## **Topic 2 — Access to Up-to-Date Information on Submitted Supports (Transparency)**
+
+Verifiable access to information, **independent of origin**, is crucial for enabling people to access necessary information in their **own language**.
+A **protocol-based approach** allows multiple implementations — written, voice, or video — creating an **inclusive** yet **verifiable** system.
+
+Because multiple channels and intermediaries exist, data in motion must be secured to ensure verifiability without compromising openness in distribution. This aligns with the necessary characteristics of anonymity and linkability of the information where needed. A complex process of data flows is needed, for example when a commune sends information to a committee and the committee sends it to the Chancellory, as at any time the committee could pull out for various reasons and they have the sovereignty to decide about it. If the information were sent directly to the Chancellory, this would violate those rights.
+
+---
+
+## **Topic 3 — Committees’ Operating Conditions & Collection Ecosystem**
+
+Built-in **data provenance** ensures traceability and compliance.
+Onboarding and delegation should be **smooth and practical**, without disrupting the overall process.
+
+All entities should have **freedom to organize** themselves within ecosystem governance.
+To support this:
+
+* The system must handle **multiple identity systems**.
+* Allow **layered governance**, enabling each entity to define its own rules within jurisdictional scope.
+* Ensure **flexibility and traceability** through a **protocol-based approach**, preventing misuse or overreach by any party.
+
+---
+
+## **Topic 4 — Presenting Committees’ Arguments via E-Collecting**
+
+**Informed consent** and **transparency** in accessing information are essential to protect **citizen sovereignty** and prevent **correlation attacks**.
+
+Even subscribing to a specific initiative can expose data useful for targeting campaigns.
+Protocols that ensure **authenticity and origin** of arguments in a **multilingual** and **multi-format** environment (digital and physical) reduce the risk of **false presentation**.
+
+---
+
+## **Topic 5 — Excluding Unlawful Supports (Eligibility, Duplicates, Authenticity)**
+
+In digital systems, **cryptography** is the only reliable defense against:
+
+* Forged signatures
+* Duplicate submissions
+* Authenticity breaches
+
+To build a **durable system**, **cryptographic agility** is essential — allowing compromised keys to be replaced without disrupting the entire network.
+
+A robust **revocation and recovery mechanism** is a *must-have* for ecosystem sustainability.
+Different use cases require different techniques:
+
+* **Zero-knowledge proofs** for privacy-preserving verification
+* **Selective disclosure** or **designated verifier signatures** for protecting against signature misuse
+
+A **protocol-based approach** provides this flexibility without enforcing a one-size-fits-all model, ensuring **document integrity** across all formats and languages.
+
+---
+
+## **Topic 6 — Preventing Suppressed (Lost/Withheld) Supports**
+
+Full **process transparency** with **confirmation mechanisms (receipts)** enables both sides to verify actions:
+
+* The collector can prove a signature was received.
+* The signer can prove their support was submitted for a specific purpose.
+
+Verification is a vector of trust that allows everyone to verify their contributions and check on others. This enables us to regain trust in digital systems and make the entire solution more resilient to manipulation. Securing information at the protocol level enables us to achieve this without compromising interoperability. The design of DKMS allows observers to be introduced into the process, providing an additional layer of security. This is similar to the way observers are used for paper-based processes in real life.
+
+**Event logs** must exist at the **protocol level** for interoperability and notification, allowing signers to confirm their vote was counted — even remotely or via mail.
+
+**Authenticity & integrity protocols** enable **traceability**, while **platform-free design** eliminates central points of failure or attack.
+
+---
+
+## **Topic 7 — Preserving Secrecy & Privacy**
+
+**Data minimization** and **privacy-preserving exchanges** depend on verifiable mechanisms that ensure trust in *who did what* and *what was checked*.
+
+Verification establishes **trust vectors** — essential for both transparency and accountability.
+Digital technologies introduce powerful **privacy-enhancing cryptography**, but require **cryptographic agility** to choose the right tool for each case.
+
+A **protocol-based approach** anchored on **identifiers** (not keys) allows interoperability across ecosystems with varying privacy standards.
+
+In addition, introducing unlinkability into the process after the citizen has interacted for eligibility allows user identities to be protected after signing an initiative.
+
+---
+
+## **Topic 8 — Integration with Paper Processes (Hybrid Operation)**
+
+**Paper** remains a trusted, simple, and inclusive medium.
+Integration with paper-based processes is essential for **inclusivity** and **adaptability** — digital systems should **enhance**, not replace, paper workflows.
+
+A **protocol-based approach** supports this inclusivity, enabling hybrid configurations:
+
+* Fully digital
+* Fully paper-based
+* Mixed or transitional setups
+
+Baseline protocols ensure all combinations remain **interoperable and verifiable**.
+Authentication and integrity protocols allow digitally enhanced papers to be produced, which increase security and address various forms of misuse and forgery that have led to recent scandals. 
+
+---
+
+## **Topic 9 — Easy Municipal Adoption & Efficiency Gains (Use Existing Infrastructure)**
+
+Municipalities differ in resources and digital readiness:
+Some can adopt advanced digital systems immediately, while others must **gradually integrate** new processes.
+
+Security must remain consistent across all entities.
+Starting with **paper-enhanced processes** provides a low-risk path to **building trust** among citizens and organizations.
+
+A **protocol-based approach** lets each municipality **choose the right tool** for its context, supporting multiple implementations under the same secure and verifiable foundation.
+
+## **Topic 10 — Electronic harvesting for all federal levels**
+
+Securing data rather than location allows for easier data exchange, not only for collecting information from various sources, but also for creating a data provenance chain for verifiability. A zero-trust architecture approach based on protocols enables simple and complex connections between authorities at different levels of technological advancement. This reduces costs and gives access to information only to authorised users, who can be governed using both bottom-up and top-down approaches, allowing for greater flexibility.
 
 ## Key Strenghts and Weaknesses
 
 ### Key strenght
-- Data Security. Decentralised protocols secure data
-- ...
-
+- Data Security in motion
+- Decentralised protocols are increasing interoperability without compromising security.
+- A lack of platform reduces the risk of failure (there is no single point of failure).
+- There is a possibility of reducing costs and time to market for the multisteakholder development process.
+  
 ### Weaknesses
-- ...
-- ...
+- A new approach would lead to barriers to adoption due to a lack of understanding. 
+- A more complicated system involving more components.
 
 ## Pilot
 
