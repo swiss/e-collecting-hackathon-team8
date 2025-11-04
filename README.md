@@ -1,5 +1,5 @@
 # Team 8. Instaurer la confiance à chaque signature ! Collecte électronique fédérée et vérifiée cryptographiquement
-
+*(an english version can be found [here](https://github.com/the-human-colossus-foundation/e-collecting-hackathon-team8/blob/main/README_en.md))*
 ## Team 8 Contributeurs
 | Membre  | Representant  | Organisation |
 |---------|---------------|-------------|
@@ -11,9 +11,10 @@
 | Michał Pietrus | *identité numérique & cryptographie appliquée* | ArgonAuths |
   
 ### Références utilisées
-1. [Hackathon Guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html) Chancellerie Fédérale
-2. Overlays Capture Architecture [OCA](https://oca.colossi.network/) specification
-3. Distributed Key Managment System [DKMS](https://dkms.colossi.network/) specification
+1. [Récolte électronique des signatures à l'appui des initiatives populaires et des demandes de référendum au niveau fédéral](https://www.newsd.admin.ch/newsd/message/attachments/90668.pdf), Rapport du Conseil Fédéral, Novembre 2023
+2. [Hackathon Guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html) Chancellerie Fédérale
+3. Overlays Capture Architecture [OCA](https://oca.colossi.network/) specification
+4. Distributed Key Managment System [DKMS](https://dkms.colossi.network/) specification
 
 ## Approche
 
@@ -34,12 +35,9 @@ Durant la durée du hackathon, nous avons intéragi avec les experts présnents 
 <img width="2471" height="1385" alt="image" src="https://github.com/user-attachments/assets/ab424852-d8ef-49e2-99e5-268ec815d056" />
 <img width="2471" height="1392" alt="image" src="https://github.com/user-attachments/assets/d79caaeb-5fba-4827-88df-fcd13bebcdab" />
 
-### 2. Description synthétique
+### 2. Description synthétique: Approche Fédérative et indépendent de plateforme unique
 
-Notre solution vise à mettre en place une architecture décentralisée permettant à chaque acteur du processus de E-Collecting d'intéragir sans la nécessité d'une plateforme unique. Cette approche vise une intégration des systèmes des acteurs légitimes plutôt que la creation de platform ou registres centralisé qui créent des dépendences envers différents acteurs technologiques, un risque de hacking (honey pot), et des coûts de déploiment.
-
-Cette architecture s'appuie sur les architectures open source [DKMS](https://dkms.colossi.network/) (Decentralised Key Management System) et [OCA](https://oca.colossi.network/) v2.0 (Overlays Capture Architecture), développées par la [Human Colossus Foundation](https://humancolossus.foundation/). Ces deux architectures sont particulièrement bien adaptées pour numériser et sécuriser les processus civiques tout en garantissant l'interopérabilité, la transparence et la vérifiabilité.
-
+#### Périmètre du Hackathon: Phase 1
 Nous proposons une approache par *petits pas significatifs* afin de s'assurer que l'évolution des normes (e.g. nombre de signatures à récolter) puisse s'adapter aux progrès technologiques.
 
 | Phase  | But  | Description |
@@ -50,24 +48,86 @@ Nous proposons une approache par *petits pas significatifs* afin de s'assurer qu
 
 Selon l'approche ci-dessus, seule la phase 1, **Numérisation essentielle** est inclue dans le champ de notre solution pour le hackathon.
 
-### Originalité de la solution: Authenticité et Intégrité *by-design*
-We introduce a protocole based approach where open-source protocoles are intégrated in the different components of an E-Collecting system.
+#### Protocoles pour l'intégrité et l'autenticité des données
+Notre solution vise à mettre en place une architecture décentralisée permettant à chaque acteur du processus de E-Collecting d'intéragir sans la nécessité d'une plateforme unique. Cette approche vise une intégration des systèmes des acteurs légitimes plutôt que la creation de platformes ou registres centralisé qui créent des dépendences envers différents acteurs technologiques, un risque de hacking (honey pot), et des coûts de déploiment. Deux innovations sont décrites ci-dessous:
+A. Authenticité & Intégrité by Design
+B. Gouvernance Distribuée
+
 #### Documentation and Diagrams
-Over the course of 2 days hackathon we worked with all [stakeholders](#sequence-diagram-details-des-interactions--flux-de-données) to reflect their requirments, governance and limitations.
+#### A Authenticité et Intégrité *by-design*
+We introduce a protocole based approach where open-source protocoles for authentication and data integrity are intégrated in the different components of an E-Collecting system. Collectively, they enable a digital verification architecture that can be used by any stakeholders in the process. 
+
+This architecture is based on two open source components [DKMS](https://dkms.colossi.network/) (Decentralised Key Management System) for the authentication and [OCA](https://oca.colossi.network/) v2.0 (Overlays Capture Architecture), developed by the [Human Colossus Foundation](https://humancolossus.foundation/) for data integrity and harmonisation. These are two architectures are particularly well suited to digitising and securing civic processes while ensuring interoperability, transparency and verifiability.
+
+The following diagramme describes how these architectures integrate into an E-Collecting system from identification of a stakeholder up to the specific applications/integration.
+
+The technology stack (left column) rests on a digital identifiers layer that assumes multiple providers. The **"Identity Provider"** layer provide flexibility to integrate different mechanisms for identification depending on the use case. An example discussed during the hackathon refers to the *accessibility* where the identification for visually impaired individual will require specific mechanisms (e.g. biometric).
+
+The **Protocol Layer** ensure security and harmonisation across the different authentication methods. 
+
+The **Governance** layer is where the purpose of the use case is defined in terms of actors and data flows. In the Hackathon, we considered on specific use case of the E-Collection in the street as a benchmark use case. Other use cases can be developed without changing the underlying layers. This approach ensures interoperability between use cases and is well suited for a "Program Approach" where multiple projects can be developed independently. During the Hackathon, the case of applying E-Collecting for cantonal petition was elaborated for example.
+
+The **Application Layer** is where the UX/UI is developed according to the use case defined in the Governance Layer. This ensures that context dependent application can be developed with the assurance that each is secured through the same governance and rest on the same authentication and integrity protocols. This approach has a significant cost impact as the security of the the system in terms of authentication and integrity is in the protocol and does not need to be redeveloped at the application layer. In technical terms, the approach is a paradigm shift from *Fat Application on Thin Protocols* to *Thin Application to Fat Protocols*
 
 <img width="2463" height="1394" alt="Proposed architecture diagram for protocol-based approach" src="./docs/E-collecting Hackathon..png" />
 
+The architecture above provide a flexible framework to handel **Anonymity** and **Linkability**, the two main characteristics to consider when securing and protecting citizen privacy. It is well know that trade off between the two often occur. Within our layered approach, the two characteristics can be considered with a specific context. For E-Collecting, linkability is only needed between citizens and the commune. Anonymity between citizen and his commune reduces to the commune not recording the citizen support to an initiative/referandum longer than the strict minimum required. On the other hand anonymity should be in place for any other actors, who should not be able to discover citizen identity.  This is especially important for the Federal Council when counting votes.
 
-Below sequence diagram present possible scenario showcase how propsed architecture could improve e-collecting process, few highlights presented on the below diagram:
-- Anonymity and linkability are the two main characteristics to consider when securing and protecting citizen privacy. Linkability is only needed between citizens and the commune, while anonymity should be in place for any other actors, who should not be able to discover citizen identity. This is especially important for the Federal Council when counting votes.
-- It is assumed that the authentication (identification) process between the commune and citizen can be carried out using various ID providers (SwissPass, Swiss e-ID, passport, SwissSign, etc.). After this, the commune can issue a `one-time certificate` that can be used to digitally sign that specific initiative. This ensures that the citizen will not be linked in the subsequent stages of the process, while maintaining the audibility and cryptographic provability of the entire process.
-- Introduce an additional notification mechanism to inform citizens about eligibility checks and signatures included in initiatives. This increases transparency and allows citizens to regain trust in the digital system. If someone tries to 'steal' their signature, they will at least be informed.
-- Thanks to `DKMS`, we can establish distributed (digital) governance around the ecosystem and designate different parties which can be verified (as well as all the objects e.g. survey with content) during the process, for example:
+Over the course of 2 days hackathon we worked with all [stakeholders](#sequence-diagram-details-des-interactions--flux-de-données) to reflect their requirments, governance and limitations. Below sequence diagram present possible scenario showcase how propsed architecture could improve e-collecting process, few highlights presented on the below diagram:
+
+- Authentication (identification) process between the commune and citizen can be carried out using various ID providers (SwissPass, Swiss e-ID, passport, SwissSign, etc.). After this, the commune can issue a `one-time certificate` that can be used to digitally sign that specific initiative. This ensures that the citizen will not be linked in the subsequent stages of the process, while maintaining the audibility and cryptographic provability of the entire process.
+- Introduction of additional notification mechanisms to inform citizens about eligibility checks and signatures included in initiatives. This increases security transparency and allows citizens to regain trust in the digital system. If someone tries to 'steal' their signature, they can opt-in a notification mechanism can informed them.
+- `DKMS` to establish a distributed (digital) governance around the ecosystem and designate different parties which can be verified (as well as all the objects e.g. survey with content) during the process, for example:
   - Inclusive organisations, who can enrich existing initiatives with additional layers, e.g. local translation, improved text for people with ADHD, improved reading materials for blind people, and so on.
   - Collectors, so citizens can verify whether a collector is authorised to collect votes.
   - ID providers
   - Verify that the content which citizens are signing is actually registered for the initiative.
 - The protocol-based approach enables each actor to define their own rules, facilitating integration with existing IT systems and reducing the costs and complexity of e-collection. This is particularly important in the context of various registries used to verify citizens and different parties within the ecosystem.
+
+#### E-Signature in the street use case
+#### Collection process & artifacts.
+The use case is describe in terms that will allow an in depth security analysis. These Hackaton notes sketches a notion of a scheme for electronic collection of signatures in supporting a referendum or an initiative.
+
+The objective of such notion is to help define clear security requirements and assumptions, as well as to facilitate security analysis.
+
+#### Notation
+Parties denoted with **boldface**.
+Artifacts denoted with *italics*.
+
+#### Parties
+1. **Committee**: Initiaties an initiative with the objective of collecting enough signatures to support it. 
+2. **Chancellerie**: Validates the initiative, counts the signatures, attests the end result.
+3. **Collectors**: Mandated by the Committee to collect signatures
+4. **Voters**: Give their signatures to support the initiative
+5. **Commune**: Verifies signatures (i.e. Voters eligibility) and ensures each Voter contributes at most once 
+
+In addition, all parties except **Voters** have internal employees, denoted **XXX.Emp** where **XXX** is the party in question. The party **Commune** conflates Canton/Commune/Electoral committee for simplicity.
+
+#### Process
+In each party **XXX** with employees, each **XXX.Emp** that intervenes on an internal process of **XXX** receives a *Mandate* from **XXX**. The mandate may be role based, or task-based (a role specific to the initiative/batch of signatures etc.).
+
+1. **Committee**: Creates and authenticates *Initiative* 
+    * **Committee.Emps** contribute to the Initiative
+2. **Chancellerie**: Verifies, approves and authenticates the  *Initiative*
+    * Concrete **Chancellerie.Emps** perform the verification
+3. **Committee**: Mandates **Collectors**  with the collections of *Support signatures* for the *Initiative* 
+    * Inidividual mandates are issued by **Committee.Emps**
+4. **Collectors**: Collect *Support signatures* for the *Initiative* from **Voters** and transfer them to **Committee**
+    * Individual *Support signatures* are collected by concrete **Collector.Emps**
+5. **Committee**: Send collected *Support signatures* to **Commune** for verification, in order to obtain *Signature certificates*
+    * Verification and processing of signature (batches) could be performed by individual **Commune.Emps** but possibly also automatized
+6. **Committee**: Obtains *Signature certificates* from the **Commune** and keeps track of the total count
+7. **Chancellerie**: Obtains all collected *Signature certificates* from **Committee**, verifies them and if the count is sufficient, issues a *Confirmation of the initiative success*.
+    * Verification and processing of signature (batches) could be performed by individual **Chancellerie.Emps** but possibly also automatized
+
+#### Artifacts
+The artifacts highlighted in the process may be constructed in many ways, depending on the construction. Additional, auxiliary artifacts may be used if needed, but those above shall be embodied in any distributed construction that aligns with the existing governance structures and procedures.
+1. *Initiative*: Initiative for which **Voters** support is asked.
+2. *Support signatures*: Set of support of **Voters** including mandatory attributes (name, address,signature,...) for each **Voters**. Support is collected asynchronously and are bundled together. **Commune** is the atomic unit (i.e. each signature list contains individual signatures of the same **Commune**
+3. *Signature certificates*: Certifies the eligibility and unicity of individual **Voters** in one or more *Support signatures* of a specific **Commune**
+4. *Confirmation of the initiative success*: is the certificate issued by the Chancellor in case of success. This artifact, or its absence after a define time limit, triggers sub-processes (e.g.  *Support signatures* destruction, launch popular vote) that terminate the support signature collection process.
+
+The process is represented in the following sequence diagramme
 ```mermaid
 sequenceDiagram
   actor A as Citizien
@@ -115,6 +175,8 @@ sequenceDiagram
 
     
 ```
+A preliminary draft of a security analysis is provided here for illustration purposes.
+
 ### Originalité de la solution: Gouvernance Distribuée *by-design*
 #### Étape 1 : Cas d’usage — Collecte de signatures en milieu physique
 Nous modélisons et implémentons la numérisation du processus de collecte de signatures, en intégrant :
