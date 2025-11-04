@@ -71,7 +71,11 @@ The **Application Layer** is where the UX/UI is developed according to the use c
 
 <img width="2463" height="1394" alt="Proposed architecture diagram for protocol-based approach" src="./docs/E-collecting Hackathon..png" />
 
-The architecture above provide a flexible framework to handel **Anonymity** and **Linkability**, the two main characteristics to consider when securing and protecting citizen privacy. It is well know that trade off between the two often occur. Within our layered approach, the two characteristics can be considered with a specific context. For E-Collecting, linkability is only needed between citizens and the commune. Anonymity between citizen and his commune reduces to the commune not recording the citizen support to an initiative/referandum longer than the strict minimum required. On the other hand anonymity should be in place for any other actors, who should not be able to discover citizen identity.  This is especially important for the Federal Council when counting votes.
+The architecture above provides a flexible framework for handling [**Anonymity** and **Linkability**](https://dud.inf.tu-dresden.de/literatur/Anon_Terminology_v0.34.pdf)—two critical privacy-related concepts to consider when evaluating citizen privacy. It is well known that trade-offs between the two often occur.  
+
+For e-Collecting, achieving a reasonable balance between these concepts means maintaining vote anonymity while minimizing potentially linkable metadata. If a vote must remain anonymous, all surrounding processes must adhere to this requirement and avoid introducing any form of linkability that could lead to deanonymization.  
+
+A commune may know whether a citizen has voted, but must not know the actual vote or have any way to link the vote to the individual. This principle is especially important for the Federal Council when counting votes.  
 
 Over the course of 2 days hackathon we worked with all [stakeholders](#sequence-diagram-details-of-interactions--data-flows) to reflect their requirments, governance and limitations. Below sequence diagram present possible scenario showcase how propsed architecture could improve e-collecting process, few highlights presented on the below diagram:
 
