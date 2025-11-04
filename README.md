@@ -226,8 +226,8 @@ L'équipe 8, « Trust for every signature » (Confiance pour chaque signature), 
 
 | Protocole  | Nom  | Propriété |
 |-------|-------------|---------|
-|**Intégrité**|**OCA**|**Architecture de capture des superpositions**|
-||Base de capture stable| Permet d'appliquer des définitions d'extension et de coloration dans les superpositions. Les émetteurs peuvent ainsi modifier un ou plusieurs objets liés pour créer des mises à jour simples plutôt que de réémettre en permanence des bases de capture. Cette propriété s'avère essentielle dans un système fédéral qui doit capturer les nuances cantonales sur une base commune|
+|**Intégrité**|**OCA**|**Architecture semantique en couche**|
+||Base de capture stable| Permet d'appliquer des définitions d'extension et de "coloration" dans les superpositions. Les émetteurs peuvent ainsi modifier un ou plusieurs objets liés pour créer des mises à jour simples plutôt que de réémettre en permanence des bases de capture. Cette propriété s'avère essentielle dans un système fédéral qui doit capturer les nuances cantonales sur une base commune|
 ||Mise en commun simplifiée des données|Le découplage peut se produire à tout moment, car les superpositions sont des objets liés. Toutes les définitions de coloration étant stockées dans les superpositions, la combinaison des données provenant de sources connexes devient transparente|
 ||Axé sur le contenu|Les objets immuables soutenus par des identifiants auto-adressables (SAID) liés cryptographiquement au contenu garantissent la sécurité et la portabilité|
 ||Attributs signalés|Les émetteurs peuvent signaler les attributs de la base de capture qui pourraient potentiellement révéler l'identité d'une entité gouvernementale|
