@@ -1,3 +1,4 @@
+```mermaid
 sequenceDiagram
     participant C as Committee
     participant CE as Committee.Emp
@@ -50,3 +51,4 @@ sequenceDiagram
         CH->>C: Issue [*Rejection*] (with reason)
     end
     Note over CH,C: *Confirmation* is public, signed, and auditable. Non-repudiable.
+```
