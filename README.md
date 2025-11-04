@@ -221,74 +221,155 @@ Bien que notre approche ne traite pas directement de l'expérience utilisateur, 
 
 Par exemple, une organisation indépendante pourrait développer une application de référendum adaptée aux personnes aveugles, leur permettant de participer plus facilement à l'initiative. De même, les personnes incapables de signer pourraient utiliser une application dédiée avec reconnaissance faciale à des fins d'identification, réduisant ainsi les obstacles à la participation. Le protocole SMPT a également permis la mise en place de diverses solutions pour les clients et serveurs de messagerie électronique sur Internet, et DKMS fait de même ici. Cela permet la création d'un écosystème riche et stable, résilient et capable de répondre aux besoins de toutes les parties (sans verrouillage des fournisseurs).
 
-## Sujets traités
-L'équipe 8 *Confiance pour chaque signature" abordéra les 10 thèmes présentés dans les [directives](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html). La table ci-dessous identifié l'approche:
-- *Gouvernance:* Quelles règles définissent le système
-- *Data:* Comment la définission et l'intégrité des données est-elle assurée.
-- *Tech.:* Quelles inovations technologiques nous allons introduire
+## Sujets abordés
+L'équipe 8, « Trust for every signature » (Confiance pour chaque signature), a abordé les 10 sujets présentés dans les [lignes directrices](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html).
 
-| Topic | (How) is it addressed? |c.f. Cas d'étude|
-| -| ------- |---- |
-| 1 « De la volonté de soutien à la déclaration de soutien »| *Gouvernance:* Interaction Collecteur-Electeur||
-|| *Data:* Deux modèles envisagé||
-||**Tech. perspective:** Authentication décentralisée||
-| 2 « Accès aux informations concernant les déclarations de soutien déposées » | *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ... ||
-| 3 « Attribution des attestations de soutien aux comités et aux entreprises de récolte »| *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...  ||
-| 4 « Diffusion des arguments des comités via le logiciel de récolte électronique de signatures » | *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...  ||
-| 5 « Exclusion des attestations de soutien illicites »  |*Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...   ||
-| 6 « Prévention des attestations de soutien non dépouillées »  | *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...  ||
-| 7 « Respect du secret du vote »  |*Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...   ||
-| 8 « Intégration avec le processus papier »  |*Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...   ||
-| 9 « Introduction facilitée pour les communes avec un gain d'efficacité ; sur la base des
-infrastructures et des processus existants »  | *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...  ||
-| 10 « Récolte électronique pour tous les niveaux fédéraux »  | *Gouvernance:* ...||
-|| *Data:* ...||
-||**Tech. perspective:** ...  ||
+| Protocole  | Nom  | Propriété |
+|-------|-------------|---------|
+|**Intégrité**|**OCA**|**Architecture de capture des superpositions**|
+||Base de capture stable| Permet d'appliquer des définitions d'extension et de coloration dans les superpositions. Les émetteurs peuvent ainsi modifier un ou plusieurs objets liés pour créer des mises à jour simples plutôt que de réémettre en permanence des bases de capture. Cette propriété s'avère essentielle dans un système fédéral qui doit capturer les nuances cantonales sur une base commune|
+||Mise en commun simplifiée des données|Le découplage peut se produire à tout moment, car les superpositions sont des objets liés. Toutes les définitions de coloration étant stockées dans les superpositions, la combinaison des données provenant de sources connexes devient transparente|
+||Axé sur le contenu|Les objets immuables soutenus par des identifiants auto-adressables (SAID) liés cryptographiquement au contenu garantissent la sécurité et la portabilité|
+||Attributs signalés|Les émetteurs peuvent signaler les attributs de la base de capture qui pourraient potentiellement révéler l'identité d'une entité gouvernementale|
+||Présentation des informations d'identification|Prise en charge de la présentation flexible des informations d'identification, de manière sécurisée et contrôlée|
+||Internationalisation|Un objet de données lié distinct capture les définitions d'encodage des jeux de caractères. Ainsi, une seule définition de rapport peut contenir différentes formes d'attributs pour différentes langues|
+||Validation des données|Garantir que les enregistrements de données capturés sont conformes au schéma OCA bundle|
+||||
+|**Authenticité**|**DKMS**|**Système de gestion des clés distribuées**|
+||Identifiants stables|*Changement DKMS — faire confiance aux identifiants, pas aux clés :* déplacer la confiance de la **clé** vers un **identifiant stable**, afin que les clés et les suites cryptographiques (par exemple, post-quantum) puissent évoluer sans compromettre l'intégrité.|
+||Systèmes d'identité multiples|Prévoir de nombreux systèmes d'identité à différents niveaux (par exemple, identité nationale, identité cantonale, identité citoyenne, etc.), nécessitant une **couche de compatibilité** entre eux. Concevoir des **systèmes d'identité parallèles** (nationaux, cantonaux, etc.)|
+||Vérification à long terme|Les PKI actuelles reposent sur des **clés à durée de vie courte et renouvelables**. Les compromissions de racine entraînent des **révocations massives**, ce qui fragilise la vérification dans le temps et entre les juridictions.|
+||Post-quantum readyness|Pre-rotation mechanism|
+||Privacy-capable interoperability|Use **open protocols** (not a central authority) to include diverse ID systems,|
+||Privacy-preserving cryptography|choosing cryptography that supports **privacy-preserving features** like *selective disclosure* and *zero-knowledge proofs*.|
+||Multi-Signature Mechanism|Ability to support multiple digital signatures defined by a treshold mechanism.|
+||||
+||||
+|**Legitimity**|**Distributed Governance**||
+||Digital Sovereignty|Digital Technologies have a tendency to centralise and simplify human relations. This limits and harm the possibility of aligning digital tools to local context and rules. A legitimate-actor-first approach is the extension of Self-Sovereign Identity principles from individuals to ecosystems|
+||Federated Governance|Allow **layered governance**, enabling each entity to define, within its jurisdictional scope, its own rules.|
 
-## Points forts et faiblesses (*Key Strenghts and Weaknesses*)
+## **Thème 1 — De la volonté de soutenir → à la soumission (UX et confiance)**
+Introduire des outils de vérification numérique pour les « électeurs » et les « collecteurs ». 
+*Authentification avancée pour l'identification : qui est qui ?* Identification sans ambiguïté des « électeurs » et des « collecteurs ».
+*Harmonisation et intégrité des données* Assurance cryptographique du contenu. Harmonisation entre les langues et les formats.
+*Gouvernance distribuée : qui est légitime ?* Preuve de la légitimité des « collecteurs ». Traçabilité et responsabilité des « employés collecteurs ».
 
-### Points forts:
-(*Key strenght*)
-- 
-- ...
+## **Thème 2 — Accès à des informations actualisées sur les aides soumises (transparence)**
+Un accès vérifiable à l'information, **indépendamment de son origine**, est essentiel pour tous les acteurs. L'accessibilité des citoyens pour les personnes handicapées peut être considérablement améliorée dans l'espace numérique grâce à de multiples mises en œuvre — écrites, vocales ou vidéo — d'un système **inclusif** mais **vérifiable**.
+Afin de garantir la vérifiabilité sans sacrifier l'ouverture, les données en circulation doivent être sécurisées, en particulier compte tenu des multiples canaux et intermédiaires impliqués. Cela répond au double besoin d'anonymat et de traçabilité, le cas échéant. Un flux de travail numérique peut rationaliser le processus.
 
-### Faiblesses:
-(*Weaknesses*)
-- ...
-- ...
+Les communes et les cantons pourraient conserver les formulaires de signature papier jusqu'à ce que la Chancellerie leur donne officiellement l'ordre de les détruire. Le devoir du comité de rassembler et de soumettre à la Chancellerie la liste complète des signataires de l'initiative peut être préservé, mais sous forme numérique, tout en conservant son droit de mettre fin prématurément à une initiative.
 
-## Pilot
+Le défi principal reste le même : comment repenser le dépôt cérémoniel des initiatives à Berne à l'ère numérique ?
 
-We suggest conducting a pilot with a consortium of stakeholders to demonstrate the benefits of the technology and identify any potential challenges that may arise during testing in the real world. The consortium should consist of:
-- organisations that collect signatures on the streets
-- an inclusivity organisation;
-- at least two or more ID providers. 
-- two or more communes.
-- at least two cantons
-- Cryptography experts
-- IT providers of solutions for IT systems in communes/cantons (integration feasibility). 
-- Federal Council
+## **Thème 3 — Conditions de fonctionnement des comités et écosystème de collecte**
+Dans l'approche proposée, la distinction entre les initiatives et les référendums est faite au niveau de la gouvernance. Ainsi, dans le cas d'un référendum, la principale différence serait que N>1 « comité » leur fournirait un certificat de soutien. Ce thème est donc, du point de vue de la numérisation, très similaire au thème 1.
 
-As initiatives are a very sensitive topic, we would suggest running a pilot in scope of collecting signatues for petition, which would give us the chance to prepare for a large-scale pilot of national initiatives. 
+*Authentification avancée pour l'identification : qui est qui ?* La **provenance des données** intégrée garantit la traçabilité et la conformité.
+*Harmonisation et intégrité des données* Harmonisation des différentes entrées numériques provenant de divers canaux
+*Gouvernance distribuée : qui est légitime ?* Gouvernance fédérée
 
-## License
+## **Thème 4 — Présentation des arguments des comités via la collecte électronique**
+Ce thème est particulièrement bien traité par l'architecture OCA (Overlays Capture Architecture). L'architecture prend en charge différentes présentations cryptographiques liées à des modèles approuvés ou à des ressources originales. Cela garantit un haut degré de vérifiabilité par tout acteur auquel un tel document est présenté par voie électronique.
+L'OCA est particulièrement pertinente pour concevoir des solutions de présentation spécifiques aux personnes handicapées tout en maintenant un haut niveau de sécurité.
+Les protocoles qui garantissent l'**authenticité et l'origine** des arguments dans un environnement **multilingue** et **multiformat** (numérique et physique) réduisent le risque de **fausse présentation**.
 
+*Authentification avancée pour l'identification : qui est qui ?* Systèmes multi-identités intégrés, traçabilité.
+*Harmonisation et intégrité des données* Toutes les fonctionnalités de l'OCA
+*Gouvernance distribuée : qui est légitime ?* Registres des originaux et des modèles approuvés
+
+## **Thème 5 — Exclusion des aides illégales (éligibilité, doublons, authenticité)**
+Une **approche basée sur un protocole** offre une certaine flexibilité sans imposer un modèle unique. Dans les systèmes numériques, la **cryptographie** est le seul moyen de défense fiable contre :
+
+* les signatures falsifiées
+* les soumissions en double
+* les violations de l'authenticité
+
+*Authentification avancée pour l'identification : qui est qui* Pour construire un **système durable**, la **souplesse cryptographique** est essentielle — elle permet de remplacer les clés compromises sans perturber l'ensemble du réseau. Un **mécanisme de révocation et de récupération** robuste est indispensable à la durabilité de l'écosystème. Différents cas d'utilisation nécessitent différentes techniques :
+* **Preuves à divulgation nulle de connaissance** pour la vérification préservant la confidentialité
+* **Divulgation sélective** ou **signatures de vérificateurs désignés** pour la protection contre l'utilisation abusive des signatures
+
+*Harmonisation et intégrité des données* garantissant l'**intégrité des documents** dans tous les formats et toutes les langues.
+
+## **Thème 6 — Prévenir la suppression (perte/rétention) des soutiens**
+
+La **transparence totale du processus** grâce à des **mécanismes de confirmation (reçus)** permet aux deux parties de vérifier les actions :
+
+* Le collecteur peut prouver qu'une signature a été reçue.
+* Le signataire peut prouver que son soutien a été soumis dans un but précis.
+
+La vérification est un vecteur de confiance qui permet à chacun de vérifier ses contributions et de contrôler celles des autres. Cela nous permet de regagner la confiance dans les systèmes numériques et de rendre l'ensemble de la solution plus résistante à la manipulation. La sécurisation des informations au niveau du protocole permet à la solution d'atteindre cet objectif sans compromettre l'interopérabilité. La conception de DKMS permet d'introduire des observateurs dans le processus, ce qui ajoute un niveau de sécurité supplémentaire. Cela s'apparente à la manière dont les observateurs sont utilisés dans les processus papier dans la vie réelle.
+
+*Authentification avancée pour l'identification : qui est qui* **traçabilité**, tandis que la **conception sans plateforme** élimine les points centraux de défaillance ou d'attaque. Des **journaux d'événements** doivent exister au **niveau du protocole** pour l'interopérabilité et la notification, permettant aux signataires de confirmer que leur vote a été pris en compte, même à distance ou par courrier.
+
+## **Thème 7 — Préserver la confidentialité et la vie privée**
+La vérification établit des **vecteurs de confiance**, essentiels à la transparence et à la responsabilité.
+Les technologies numériques introduisent une **cryptographie puissante qui renforce la confidentialité**, mais nécessitent une **agilité cryptographique** pour choisir l'outil adapté à chaque cas.
+
+Une **approche basée sur des protocoles** et ancrée sur des **identifiants** (et non des clés) permet l'interopérabilité entre des écosystèmes ayant des normes de confidentialité différentes.
+
+De plus, l'introduction de la non-liabilité dans le processus après que le citoyen a interagi pour vérifier son éligibilité permet de protéger l'identité des utilisateurs après la signature d'une initiative.
+
+*Authentification avancée pour l'identification :*  les **échanges préservant la confidentialité** dépendent de mécanismes vérifiables qui garantissent la confiance dans *qui a fait quoi* et *ce qui a été vérifié*.
+*Harmonisation et intégrité des données* : **minimisation des données**
+
+## **Topic 8 — Integration with Paper Processes (Hybrid Operation)**
+
+**Paper** remains a trusted, simple, and inclusive medium. Integration with paper-based processes is essential for **inclusivity** and **adaptability** — digital systems should **enhance**, not replace, paper workflows. 
+
+Authentication and integrity protocols allow digitally enhanced papers to be produced, which increase security and address various forms of misuse and forgery that have led to recent scandals. 
+
+A **protocol-based approach** supports this inclusivity, enabling hybrid configurations:
+
+* Fully digital
+* Fully paper-based
+* Mixed or transitional setups
+
+Baseline protocols ensure all combinations remain **interoperable and verifiable**.
+## **Thème 9 — Adoption facile par les municipalités et gains d'efficacité (utilisation des infrastructures existantes)**
+
+Les communes/cantons diffèrent en termes de ressources et de modèles de services publics numériques (par exemple, Genève centralise les registres) :
+Certaines peuvent adopter immédiatement des systèmes numériques avancés, tandis que d'autres doivent **intégrer progressivement** de nouveaux processus.
+
+La sécurité doit rester cohérente dans toutes les entités.
+Commencer par des **processus améliorés sur papier** offre un moyen peu risqué de **renforcer la confiance** entre les citoyens et les organisations.
+
+Une **approche basée sur des protocoles** permet à chaque municipalité de **choisir l'outil adapté** à son contexte, en prenant en charge plusieurs implémentations sous la même base sécurisée et vérifiable. Les protocoles peuvent être intégrés dans les solutions existantes.
+
+## **Thème 10 — Collecte électronique pour tous les niveaux fédéraux**
+
+Sécuriser les données plutôt que leur emplacement facilite l'échange de données, non seulement pour collecter des informations provenant de diverses sources, mais aussi pour créer une chaîne de provenance des données à des fins de vérifiabilité. Une approche d'architecture zéro confiance basée sur des protocoles permet des connexions simples et complexes entre les autorités à différents niveaux d'avancement technologique. Cela réduit les coûts et donne accès aux informations uniquement aux utilisateurs autorisés, qui peuvent être régis à la fois par des approches ascendantes et descendantes, ce qui permet une plus grande flexibilité.
+## Principaux atouts et faiblesses
+
+### Principaux atouts
+- Minimisation et sécurité des données en mouvement.
+- Les protocoles décentralisés renforcent l'interopérabilité sans compromettre la sécurité.
+- L'absence de plateforme réduit le risque de défaillance (il n'y a pas de point de défaillance unique).
+- Il est possible de réduire les coûts et les délais de mise sur le marché pour le processus de développement multipartite.
+  
+### Faiblesses
+- Une nouvelle approche entraîne des obstacles à l'adoption en raison d'un manque de compréhension. 
+- Un système plus complexe impliquant davantage de composants.
+
+## Projet pilote
+Au cours du hackathon, de nombreuses caractéristiques d'un projet pilote idéal ont été discutées.
+Nous suggérons de mener un projet pilote avec un consortium de parties prenantes afin de démontrer les avantages de la technologie et d'identifier les défis potentiels qui pourraient survenir lors des tests dans le monde réel. Le consortium devrait être composé :
+- d'organisations qui collectent des signatures dans la rue ;
+- d'une organisation inclusive ;
+- d'au moins deux fournisseurs d'identité ;
+- d'au moins deux communes ;
+- d'au moins deux cantons ;
+- d'experts en cryptographie ;
+- de fournisseurs de solutions informatiques pour les systèmes informatiques des communes/cantons (faisabilité de l'intégration) ;
+- du Conseil fédéral.
+
+- Les initiatives étant un sujet très sensible, nous suggérons de mener un projet pilote incluant :
+- Une population représentative de cantons et de communes afin de garantir la scalabilité de la solution et d'évaluer l'impact financier sur les communautés locales,
+- L'accessibilité. Au moins un ou deux handicaps doivent être pris en compte dans la conception initiale. L'inclusivité n'est pas un simple ajout,
+- Une pétition pour démarrer rapidement. Le fait d'inclure la collecte de signatures pour la pétition comme première étape pourrait permettre de bien préparer un projet pilote à grande échelle d'initiatives nationales. 
+
+## Licence
 Tous les documents contenus dans ce référentiel sont soumis à une licence EUPL1.2. Pour plus d'informations, consultez le fichier [LICENCE](LICENCE).
 
 Alle Materialien in diesem Repository unterliegen einer EUPL1.2-Lizenz – Einzelheiten finden Sie in der Datei [LICENSE](LICENSE).
@@ -297,5 +378,4 @@ Tutti i materiali presenti in questo archivio sono concessi in licenza ai sensi 
 
 Ĉiuj materialoj en ĉi tiu deponejo estas licencitaj laŭ EUPL1.2-licenco - vidu la dosieron [LICENSE](LICENSE) por detaloj.
 
-All materials under this repository is licensed under a EUPL1.2 License - see the [LICENSE](LICENSE) file for details.
-
+Tous les documents contenus dans ce référentiel sont concédés sous licence EUPL1.2. Pour plus de détails, consultez le fichier [LICENCE](LICENCE).
