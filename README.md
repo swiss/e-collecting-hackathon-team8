@@ -229,8 +229,8 @@ L'équipe 8 *Confiance pour chaque signature" abordéra les 10 thèmes présent�
 
 | Topic | (How) is it addressed? |c.f. Cas d'étude|
 | -| ------- |---- |
-| 1 « De la volonté de soutien à la déclaration de soutien »| *Gouvernance:* ...||
-|| *Data:* ...||
+| 1 « De la volonté de soutien à la déclaration de soutien »| *Gouvernance:* Interaction Collecteur-Electeur||
+|| *Data:* Deux modèles envisagé||
 ||**Tech. perspective:** Authentication décentralisée||
 | 2 « Accès aux informations concernant les déclarations de soutien déposées » | *Gouvernance:* ...||
 || *Data:* ...||
