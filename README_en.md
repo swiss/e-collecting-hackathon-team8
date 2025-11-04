@@ -50,6 +50,7 @@ According to the above approach, only phase 1, **Essential Digitisation**, is in
 Our solution aims to establish a decentralised architecture enabling each participant in the e-collecting process to interact without the need for a single platform. This approach aims to integrate the systems of legitimate participants rather than creating centralised platforms or registers that create dependencies on different technology providers, a risk of hacking (honey pot), and deployment costs. Two innovations are described below:
 
 A. Authenticity & Integrity by Design
+
 B. Distributed Governance
 
 #### Documentation and Diagrams
