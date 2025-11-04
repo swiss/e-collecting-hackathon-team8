@@ -222,72 +222,73 @@ Although our approach does not directly address UX, it has a significant impact 
 ## Topics covered
 Team 8, ‘Trust for every signature’, addressed the 10 topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html). 
 
+| Protocol  | Name  | Property |
+|-------|-------------|---------|
+|**Integrity**|**OCA**|**Overlays Capture Architecture**|
+||Stable Capture Base| Enable extension and colouration definitions applied in the overlays. As a result it enables issuers to edit one or more of the linked objects to create simple updates rather than reissue capture bases on an ongoing basis. This property proves essential in a federal system that needs to capture cantonal nuances on a common basis|
+||Simplified Data Pooling|Decoupling can occur at any time as overlays are linked objects. With all colouration definitions stored in the overlays, combining data from related sources becomes seamless|
+||Content Driven|Immutable objects backed by Self-Addressing Identifiers (SAID) cryptographically bound to the content, assure about security and portability|
+||Flagged Attributes|Issuers can flag attributes in the capture base that could potentially unblind the identity of a governing entity|
+||Credential Presentation|Support for flexible credential presentation, in secure and controled way|
+||Internationalisation|A separate linked data object captures character set encoding definitions. Thus, a single report definition can contain different attribute forms for different languages|
+||Data Validation|Ensure captured data records are OCA bundle schema complia|
+||||
+|**Authenticity**|**DKMS**|**Distributed Key Management System**|
+||Stable Identifiers|*DKMS shift — trust IDs, not keys:* Move trust from the **key** to a **stable identifier**, so keys and crypto suites (e.g., post-quantum) can evolve without breaking integrity.|
+||Multiple identity systems|Expect many identity systems at different levels (e.g., national ID, canton ID, citizien ID etc.), requiring a **compatibility layer** between them. Design for **parallel identity systems** (national, canton, etc.)|
+||Long-term verification|Today’s PKI relies on **short-lived, rotating keys**. Root compromises force **mass revocations**, making cross-time and cross-jurisdiction verification fragile.|
+||Post-quantum readyness|Pre-rotation mechanism|
+||Privacy-capable interoperability|Use **open protocols** (not a central authority) to include diverse ID systems,|
+||Privacy-preserving cryptography|choosing cryptography that supports **privacy-preserving features** like *selective disclosure* and *zero-knowledge proofs*.|
+||Multi-Signature Mechanism|Ability to support multiple digital signatures defined by a treshold mechanism.|
+||||
+||||
+|**Legitimity**|**Distributed Governance**||
+||Digital Sovereignty|Digital Technologies have a tendency to centralise and simplify human relations. This limits and harm the possibility of aligning digital tools to local context and rules. A legitimate-actor-first approach is the extension of Self-Sovereign Identity principles from individuals to ecosystems|
+||Federated Governance|Allow **layered governance**, enabling each entity to define, within its jurisdictional scope, its own rules.|
+
 ## **Topic 1 — From Willingness to Support → Submission (UX & Trust)**
-
-### Advanced Authentication for Identification: *Who is Who*
-
-* **Multiple identity systems:** Expect many identity systems at different levels (e.g., national ID, canton ID, citizien ID etc.), requiring a **compatibility layer** between them.
-* **PKI limits for long-term verification:** Today’s PKI relies on **short-lived, rotating keys**. Root compromises force **mass revocations**, making cross-time and cross-jurisdiction verification fragile.
-* **DKMS shift — trust IDs, not keys:** Move trust from the **key** to a **stable identifier**, so keys and crypto suites (e.g., post-quantum) can evolve without breaking integrity. Design for **parallel identity systems** (national, canton, etc.).
-* **Protocol-first, privacy-capable interoperability:** Use **open protocols** (not a central authority) to include diverse ID systems, choosing cryptography that supports **privacy-preserving features** like *selective disclosure* and *zero-knowledge proofs*.
-  
-### Distributed Governance
-
-* Maintaining digital sovereignty would be a major challenge. This is why an approach based on decentralised protocols would help with the design and deployment of systems, allowing us to maintain the same digital sovereignty as in the real world without worrying that the technology would limit or restrict it. Technologies have a tendency to centralise and simplify things, which can harm the possibility of adapting them to local rules. We therefore suggest a local-first approach. 
-
----
+Introduce digital verification tooling for both `Voters` and `Collectors`. 
+*Advanced Authentication for Identification: Who is Who* Unambiguous identification of `Voters` and `Collectors`.
+*Data Harmonisation & Integrity* Cryptographic assurance of content. Harmonisation across languages and format.
+*Distributed Governance: Who is legitimate?* Proof of `Collector` legitimacy. Traceability and accountability of `Collector.employee`.
 
 ## **Topic 2 — Access to Up-to-Date Information on Submitted Supports (Transparency)**
+Verifiable access to information, **independent of origin**, is crucial for all actors. For citizen accessibility for impaired individuals can be drastically improved in the digital space through multiple implementations — written, voice, or video — of an **inclusive** yet **verifiable** system.
+To ensure verifiability without sacrificing openness, data in motion must be secured — especially given the multiple channels and intermediaries involved. This supports the dual needs of anonymity and linkability, where appropriate. A digital workflow can streamline the process.
 
-Verifiable access to information, **independent of origin**, is crucial for enabling people to access necessary information in their **own language**.
-A **protocol-based approach** allows multiple implementations — written, voice, or video — creating an **inclusive** yet **verifiable** system.
+Communes and cantons could retain paper-based signature forms until formally instructed by the Chancellery to destroy them. The Committee’s duty to aggregate and submit the full list of initiative supporters to the Chancellery can be preserved — but in digital form — while maintaining its right to prematurely terminate an initiative.
 
-Because multiple channels and intermediaries exist, data in motion must be secured to ensure verifiability without compromising openness in distribution. This aligns with the necessary characteristics of anonymity and linkability of the information where needed. A complex process of data flows is needed, for example when a commune sends information to a committee and the committee sends it to the Chancellory, as at any time the committee could pull out for various reasons and they have the sovereignty to decide about it. If the information were sent directly to the Chancellory, this would violate those rights.
-
----
+The key challenge remains: How to reimagine the ceremonial deposit of initiatives in Bern for the digital age.
 
 ## **Topic 3 — Committees’ Operating Conditions & Collection Ecosystem**
+In a the proposed approach, the distiction between initatives and referandum are taken at the governance layer. Thus in the case of the referendum the main difference would be that N>1 "Committee" would provide them with support certificate. Thus this topic is, from a digitalisation perspective, very similar to Topic 1.
 
-Built-in **data provenance** ensures traceability and compliance.
-Onboarding and delegation should be **smooth and practical**, without disrupting the overall process.
-
-All entities should have **freedom to organize** themselves within ecosystem governance.
-To support this:
-
-* The system must handle **multiple identity systems**.
-* Allow **layered governance**, enabling each entity to define its own rules within jurisdictional scope.
-* Ensure **flexibility and traceability** through a **protocol-based approach**, preventing misuse or overreach by any party.
-
----
+*Advanced Authentication for Identification: Who is Who* Built-in **data provenance** ensures traceability and compliance.
+*Data Harmonisation & Integrity* Harmonisation of different digital input from various channels
+*Distributed Governance: Who is legitimate?* Federated Governance
 
 ## **Topic 4 — Presenting Committees’ Arguments via E-Collecting**
-
-**Informed consent** and **transparency** in accessing information are essential to protect **citizen sovereignty** and prevent **correlation attacks**.
-
-Even subscribing to a specific initiative can expose data useful for targeting campaigns.
+This topic is particularly well adressed by the Overlays Capture Architecture (OCA). The architecture support different presentation cryptographically related to approved template or original assets. This ensures a high degree of verifiability by any actor that is presented such a document electronically.
+OCA is particularly relevant to desing specific presentation solutions to impaired persons while maintaing a high degree of security.
 Protocols that ensure **authenticity and origin** of arguments in a **multilingual** and **multi-format** environment (digital and physical) reduce the risk of **false presentation**.
 
----
+*Advanced Authentication for Identification: Who is Who* Built-in Multi-Identity systems, traceability.
+*Data Harmonisation & Integrity* All functionalities of OCA
+*Distributed Governance: Who is legitimate?* Registeries of originals and approved templates
 
 ## **Topic 5 — Excluding Unlawful Supports (Eligibility, Duplicates, Authenticity)**
-
-In digital systems, **cryptography** is the only reliable defense against:
+A **protocol-based approach** provides flexibility without enforcing a one-size-fits-all model. In digital systems, **cryptography** is the only reliable defense against:
 
 * Forged signatures
 * Duplicate submissions
 * Authenticity breaches
 
-To build a **durable system**, **cryptographic agility** is essential — allowing compromised keys to be replaced without disrupting the entire network.
-
-A robust **revocation and recovery mechanism** is a *must-have* for ecosystem sustainability.
-Different use cases require different techniques:
-
+*Advanced Authentication for Identification: Who is Who* To build a **durable system**, **cryptographic agility** is essential — allowing compromised keys to be replaced without disrupting the entire network. A robust **revocation and recovery mechanism** is a *must-have* for ecosystem sustainability. Different use cases require different techniques:
 * **Zero-knowledge proofs** for privacy-preserving verification
 * **Selective disclosure** or **designated verifier signatures** for protecting against signature misuse
 
-A **protocol-based approach** provides this flexibility without enforcing a one-size-fits-all model, ensuring **document integrity** across all formats and languages.
-
----
+*Data Harmonisation & Integrity* ensuring **document integrity** across all formats and languages.
 
 ## **Topic 6 — Preventing Suppressed (Lost/Withheld) Supports**
 
@@ -296,18 +297,11 @@ Full **process transparency** with **confirmation mechanisms (receipts)** enable
 * The collector can prove a signature was received.
 * The signer can prove their support was submitted for a specific purpose.
 
-Verification is a vector of trust that allows everyone to verify their contributions and check on others. This enables us to regain trust in digital systems and make the entire solution more resilient to manipulation. Securing information at the protocol level enables us to achieve this without compromising interoperability. The design of DKMS allows observers to be introduced into the process, providing an additional layer of security. This is similar to the way observers are used for paper-based processes in real life.
+Verification is a vector of trust that allows everyone to verify their contributions and check on others. This enables us to regain trust in digital systems and make the entire solution more resilient to manipulation. Securing information at the protocol level enables the solution to achieve this without compromising interoperability. The design of DKMS allows observers to be introduced into the process, providing an additional layer of security. This is similar to the way observers are used for paper-based processes in real life.
 
-**Event logs** must exist at the **protocol level** for interoperability and notification, allowing signers to confirm their vote was counted — even remotely or via mail.
-
-**Authenticity & integrity protocols** enable **traceability**, while **platform-free design** eliminates central points of failure or attack.
-
----
+*Advanced Authentication for Identification: Who is Who* **traceability**, while **platform-free design** eliminates central points of failure or attack. **Event logs** must exist at the **protocol level** for interoperability and notification, allowing signers to confirm their vote was counted — even remotely or via mail.
 
 ## **Topic 7 — Preserving Secrecy & Privacy**
-
-**Data minimization** and **privacy-preserving exchanges** depend on verifiable mechanisms that ensure trust in *who did what* and *what was checked*.
-
 Verification establishes **trust vectors** — essential for both transparency and accountability.
 Digital technologies introduce powerful **privacy-enhancing cryptography**, but require **cryptographic agility** to choose the right tool for each case.
 
@@ -315,12 +309,14 @@ A **protocol-based approach** anchored on **identifiers** (not keys) allows inte
 
 In addition, introducing unlinkability into the process after the citizen has interacted for eligibility allows user identities to be protected after signing an initiative.
 
----
+*Advanced Authentication for Identification:*  **privacy-preserving exchanges** depend on verifiable mechanisms that ensure trust in *who did what* and *what was checked*.
+*Data Harmonisation & Integrity*: **Data minimization**
 
 ## **Topic 8 — Integration with Paper Processes (Hybrid Operation)**
 
-**Paper** remains a trusted, simple, and inclusive medium.
-Integration with paper-based processes is essential for **inclusivity** and **adaptability** — digital systems should **enhance**, not replace, paper workflows.
+**Paper** remains a trusted, simple, and inclusive medium. Integration with paper-based processes is essential for **inclusivity** and **adaptability** — digital systems should **enhance**, not replace, paper workflows. 
+
+Authentication and integrity protocols allow digitally enhanced papers to be produced, which increase security and address various forms of misuse and forgery that have led to recent scandals. 
 
 A **protocol-based approach** supports this inclusivity, enabling hybrid configurations:
 
@@ -329,19 +325,16 @@ A **protocol-based approach** supports this inclusivity, enabling hybrid configu
 * Mixed or transitional setups
 
 Baseline protocols ensure all combinations remain **interoperable and verifiable**.
-Authentication and integrity protocols allow digitally enhanced papers to be produced, which increase security and address various forms of misuse and forgery that have led to recent scandals. 
-
----
 
 ## **Topic 9 — Easy Municipal Adoption & Efficiency Gains (Use Existing Infrastructure)**
 
-Municipalities differ in resources and digital readiness:
+Communes / Conatons differ in resources and digital public services models (e.g. Geneva centralises the registeries):
 Some can adopt advanced digital systems immediately, while others must **gradually integrate** new processes.
 
 Security must remain consistent across all entities.
 Starting with **paper-enhanced processes** provides a low-risk path to **building trust** among citizens and organizations.
 
-A **protocol-based approach** lets each municipality **choose the right tool** for its context, supporting multiple implementations under the same secure and verifiable foundation.
+A **protocol-based approach** lets each municipality **choose the right tool** for its context, supporting multiple implementations under the same secure and verifiable foundation. Protocols can be integrated into existing solutions
 
 ## **Topic 10 — Electronic harvesting for all federal levels**
 
@@ -350,17 +343,17 @@ Securing data rather than location allows for easier data exchange, not only for
 ## Key Strenghts and Weaknesses
 
 ### Key strenght
-- Data Security in motion
+- Data minimisation and Data Security in motion
 - Decentralised protocols are increasing interoperability without compromising security.
 - A lack of platform reduces the risk of failure (there is no single point of failure).
 - There is a possibility of reducing costs and time to market for the multisteakholder development process.
   
 ### Weaknesses
-- A new approach would lead to barriers to adoption due to a lack of understanding. 
+- A new approach lead to barriers to adoption due to a lack of understanding. 
 - A more complicated system involving more components.
 
 ## Pilot
-
+During the Hackathon many features of an ideal pilot where discussed.
 We suggest conducting a pilot with a consortium of stakeholders to demonstrate the benefits of the technology and identify any potential challenges that may arise during testing in the real world. The consortium should consist of:
 - organisations that collect signatures on the streets
 - an inclusivity organisation;
@@ -371,10 +364,12 @@ We suggest conducting a pilot with a consortium of stakeholders to demonstrate t
 - IT providers of solutions for IT systems in communes/cantons (integration feasibility). 
 - Federal Council
 
-As initiatives are a very sensitive topic, we would suggest running a pilot in scope of collecting signatues for petition, which would give us the chance to prepare for a large-scale pilot of national initiatives. 
+As initiatives are a very sensitive topic, we would suggest running a pilot including:
+- A representative population of cantons and communes to ensure scalablility of the solution and assess the cost impact on the local communities,
+- Accessability. At least one or two accessiblity impairment must be considered in the primary design. Inclusiveness is not an add-on,
+- Petition as a warm up to start rapidely. Including collecting signatures for petition as a first step could prepare well for a large-scale pilot of national initiatives. 
 
 ## License
-
 Tous les documents contenus dans ce référentiel sont soumis à une licence EUPL1.2. Pour plus d'informations, consultez le fichier [LICENCE](LICENCE).
 
 Alle Materialien in diesem Repository unterliegen einer EUPL1.2-Lizenz – Einzelheiten finden Sie in der Datei [LICENSE](LICENSE).
